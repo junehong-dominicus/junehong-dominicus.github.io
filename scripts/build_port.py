@@ -2,9 +2,9 @@ import markdown
 import yaml
 from pathlib import Path
 
-POST_MD = Path("posts/2026-01-langchain.md")
-TEMPLATE = Path("templates/post.html")
-OUTPUT = Path("posts/2026-01-langchain.html")
+POST_MD = Path("../posts/2026-01-11-RAG.md")
+TEMPLATE = Path("../templates/post.html")
+OUTPUT = Path("../posts/2026-01-11-RAG.html")
 
 raw = POST_MD.read_text()
 
