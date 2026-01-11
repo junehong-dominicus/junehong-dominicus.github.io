@@ -1,4 +1,5 @@
 # junehong.github.io
+```
 │
 ├── index.html              # Main landing page (already have this)
 ├── blog.html               # Blog index page
@@ -12,4 +13,4 @@
 │   └── 2026-01-digital-twin.html
 │
 └── README.md
-
+```
