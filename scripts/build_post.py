@@ -1,10 +1,16 @@
 import markdown
 import yaml
+import argparse
 from pathlib import Path
 
-POST_MD = Path("../posts/2026-01-11-RAG.md")
+parser = argparse.ArgumentParser(description="Convert Markdown to HTML.")
+parser.add_argument("input", nargs="?", default="../posts/2026-01-11-RAG.md", help="Input Markdown file")
+parser.add_argument("output", nargs="?", default="../posts/2026-01-11-RAG.html", help="Output HTML file")
+args = parser.parse_args()
+
+POST_MD = Path(args.input)
 TEMPLATE = Path("../templates/post.html")
-OUTPUT = Path("../posts/2026-01-11-RAG.html")
+OUTPUT = Path(args.output)
 
 raw = POST_MD.read_text()
 
