@@ -1,172 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>June Hong - Software Architect</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>June Hong – Software Architect & Technical Leader</title>
 
-    <style>
-        /* Global Layout */
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background: #f7f9fc;
-            color: #2c3e50;
-        }
+  <style>
+    /* ------------------------------
+       Global Styles
+    ------------------------------ */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
 
-        /* Container */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
 
-        /* Navigation */
-        nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e9f0;
-            padding: 15px 20px;
-            display: flex;
-            gap: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+    h1, h2, h3 {
+      margin-top: 0;
+      letter-spacing: 0.02em;
+    }
 
-        nav a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    section {
+      margin-top: 3rem;
+    }
 
-        /* Header */
-        header {
-            margin-top: 30px;
-            text-align: center;
-        }
+    /* ------------------------------
+       Navigation
+    ------------------------------ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: rgba(249, 250, 251, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-        header h1 {
-            font-size: 2.4rem;
-            margin-bottom: 10px;
-        }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        header h3 {
-            font-weight: 400;
-            color: #555;
-        }
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #111827;
+    }
 
-        /* Section Styling */
-        section {
-            background: #ffffff;
-            padding: 25px 30px;
-            margin-top: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
+    .monogram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 6px;
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
 
-        h2 {
-            margin-top: 0;
-            border-bottom: 2px solid #eef2f7;
-            padding-bottom: 8px;
-            font-size: 1.6rem;
-        }
+    .nav-links a {
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      color: #374151;
+    }
 
-        h3 {
-            margin-top: 25px;
-            font-size: 1.2rem;
-        }
+    .nav-links a:hover {
+      color: #111827;
+    }
 
-        ul {
-            padding-left: 20px;
-        }
+    /* ------------------------------
+       Hero Section
+    ------------------------------ */
+    header.hero {
+      padding: 4rem 1.5rem 3rem;
+      background: radial-gradient(circle at top left, #e0f2fe, #f9fafb 60%);
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-        li {
-            margin-bottom: 6px;
-        }
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
 
-        /* Links */
-        a {
-            color: #007bff;
-        }
-    </style>
+    .hero h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 1rem;
+      color: #374151;
+    }
+
+    .button-row {
+      margin-top: 1.5rem;
+    }
+
+    .primary-button,
+    .secondary-button {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      margin-right: 0.75rem;
+    }
+
+    .primary-button {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .secondary-button {
+      border: 1px solid #d1d5db;
+      color: #374151;
+      background-color: white;
+    }
+
+    /* ------------------------------
+       Expertise Cards
+    ------------------------------ */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 0.75rem;
+      border: 1px solid #e5e7eb;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ------------------------------
+       Footer
+    ------------------------------ */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="monogram">JH</div>
+        <span>June Hong</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#ml-ai">ML & AI</a>
+        <a href="#highlights">Highlights</a>
         <a href="blog.html">Blog</a>
         <a href="https://github.com/junehong-dominicus" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank">LinkedIn</a>
-    </nav>
-
-    <div class="container">
-
-        <header>
-            <h1>👋 Hello, I'm June Hong</h1>
-            <h3>🚀 Software Architect • Technical Leader • Innovator</h3>
-        </header>
-
-        <section>
-            <p>With over 10 years of software development and 12 years of management experience, I've led high-impact teams across global tech giants like Samsung, NTT, and NEC. My work spans cloud platforms, smart mobile devices, and embedded systems, delivering solutions that power millions of users.</p>
-
-            <p>I specialize in applying machine learning to solve real-world problems with precision and scalability. My expertise spans TensorFlow, Keras, and scikit-learn, enabling me to deliver robust solutions in image classification, object detection, NLP, predictive analytics, and time-series forecasting.</p>
-
-            <p>My technical toolkit includes C, C++, Python, Java, JavaScript, ARM Assembler, Embedded Linux, FreeRTOS, and a wide array of communication and networking protocols. I’m also proficient with modern web and cloud technologies like SpringBoot, React-Redux, Azure, AWS, Docker, and multiple databases.</p>
-
-            <p>As a bilingual professional (English and Korean), I thrive in dynamic, cross-cultural environments, driving innovation and delivering solutions that power millions of users globally.</p>
-        </section>
-
-        <section>
-            <h2>🧠 Expertise Snapshot</h2>
-
-            <h3>💻 Platforms & Frameworks</h3>
-            <ul>
-                <li>Spring Boot, Django REST, MongoDB, PostgreSQL, MySQL, Redis</li>
-                <li>Azure, Windows Server, AWS, Docker, Linux Server</li>
-                <li>Embedded Systems: STM32, ARM MCUs, Embedded Linux, FreeRTOS, RTOSs, Bare Metal, REX OS, VxWorks, Nucleus</li>
-            </ul>
-
-            <h3>🧑‍💻 Programming Languages</h3>
-            <ul>
-                <li>Python, Java, C/C++, Kotlin, Swift, ARM Assembler</li>
-                <li>Web: HTML, CSS, JavaScript, PHP</li>
-            </ul>
-
-            <h3>🌐 Networking & Communication Protocols</h3>
-            <ul>
-                <li>TCP/IP, MQTT, HTTP/HTTPS, RTP/RTCP, SIP, Modbus</li>
-                <li>Wireless: Wi-Fi, TV White Space</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>🤖 Machine Learning & AI</h2>
-            <p>I apply machine learning to solve real-world problems with precision and scalability. My experience spans:</p>
-
-            <ul>
-                <li><strong>Frameworks & Libraries:</strong> TensorFlow 2.0, Keras, scikit-learn, OpenCV</li>
-                <li><strong>Techniques:</strong> Supervised & Unsupervised Learning, CNNs, RNNs, Transfer Learning</li>
-                <li><strong>Applications:</strong>
-                    <ul>
-                        <li>Image classification & object detection</li>
-                        <li>Natural Language Processing (NLP)</li>
-                        <li>Predictive analytics & recommendation systems</li>
-                        <li>Time-series forecasting</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <p>I build ML-powered features into mobile apps, cloud platforms, and embedded systems—bridging the gap between intelligent models and practical deployment.</p>
-        </section>
-
+      </div>
     </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Hello, I’m June Hong</h1>
+    <h2>Software Architect • Technical Leader • Innovator</h2>
+
+    <p>
+      With over 10 years of software development and 12 years of management experience, I design and deliver scalable
+      software systems across cloud platforms, smart devices, and embedded systems—powering products used by millions worldwide.
+    </p>
+
+    <p>
+      I’ve led high-impact engineering teams at global technology companies including Samsung, NTT, and NEC, bridging
+      business goals with robust technical execution.
+    </p>
+
+    <div class="button-row">
+      <a class="primary-button" href="#expertise">View my expertise</a>
+      <a class="secondary-button" href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank">Connect on LinkedIn</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- About -->
+    <section id="about">
+      <h2>What I do</h2>
+      <p>
+        I specialize in applying machine learning and modern software architectures to real-world products, from cloud
+        services to embedded systems. My focus is on reliable, production-ready solutions—not just prototypes.
+      </p>
+      <p>
+        I work end-to-end: from architecture and technical strategy, through hands-on implementation, to mentoring teams
+        and aligning stakeholders across engineering, product, and business.
+      </p>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise">
+      <h2>Expertise Snapshot</h2>
+
+      <div class="expertise-grid">
+        <div class="card">
+          <h3>Platforms & Frameworks</h3>
+          <p>Designing and deploying distributed systems, APIs, and services across cloud, web, and embedded environments.</p>
+          <ul>
+            <li><strong>Backend & APIs:</strong> Spring Boot, Django REST</li>
+            <li><strong>Data:</strong> MongoDB, PostgreSQL, MySQL, Redis</li>
+            <li><strong>Cloud & Infra:</strong> Azure, AWS, Docker, Linux Server</li>
+            <li><strong>Embedded:</strong> STM32, ARM MCUs, Embedded Linux, FreeRTOS, VxWorks</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Programming</h3>
+          <p>Polyglot engineer with deep experience in systems-level and application-level development.</p>
+          <ul>
+            <li><strong>Languages:</strong> Python, Java, C/C++, Kotlin, Swift, ARM Assembly</li>
+            <li><strong>Web:</strong> HTML, CSS, JavaScript, PHP</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Networking & Communication</h3>
+          <p>Building reliable, real-time and distributed systems over diverse protocols and networks.</p>
+          <ul>
+            <li><strong>Protocols:</strong> TCP/IP, MQTT, HTTP/HTTPS, RTP/RTCP, SIP, Modbus</li>
+            <li><strong>Wireless:</strong> Wi‑Fi, TV White Space</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ML & AI -->
+    <section id="ml-ai">
+      <h2>Machine Learning & AI</h2>
+      <p>
+        I apply machine learning to solve concrete business and engineering problems with a focus on reliability,
+        scalability, and maintainability in production environments.
+      </p>
+
+      <ul>
+        <li><strong>Frameworks:</strong> TensorFlow 2, Keras, scikit-learn, OpenCV</li>
+        <li><strong>Techniques:</strong> supervised/unsupervised learning, CNNs, RNNs, transfer learning</li>
+        <li><strong>Applications:</strong>
+          <ul>
+            <li>Image classification & object detection</li>
+            <li>Natural Language Processing</li>
+            <li>Predictive analytics & recommendation systems</li>
+            <li>Time-series forecasting</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights">
+      <h2>Selected Highlights</h2>
+      <ul>
+        <li><strong>Scaled cloud platform:</strong> Led architecture for a service supporting millions of devices.</li>
+        <li><strong>Embedded ML deployment:</strong> Delivered ML features on resource-constrained hardware.</li>
+        <li><strong>Cross-functional leadership:</strong> Managed and mentored engineering teams across multiple countries.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 June Hong — Built with plain HTML & CSS
+  </footer>
 
 </body>
 </html>

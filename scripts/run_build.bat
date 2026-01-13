@@ -19,4 +19,8 @@ REM Execute the Python build script
 echo [INFO] Starting build process...
 python build_post.py %*
 
+REM Generate blog index
+echo [INFO] Updating blog index...
+python build_blog.py
+
 endlocal
