@@ -1,6 +1,5 @@
 import argparse
 import markdown
-import sys
 import yaml
 from pathlib import Path
 
