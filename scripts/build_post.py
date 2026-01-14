@@ -1,32 +1,27 @@
-import markdown
-import yaml
 import argparse
 from pathlib import Path
+from con_md_to_html import convert_md_to_html
 
-parser = argparse.ArgumentParser(description="Convert Markdown to HTML.")
-parser.add_argument("input", nargs="?", default="../posts/2026-01-11-RAG.md", help="Input Markdown file")
-parser.add_argument("output", nargs="?", default="../posts/2026-01-11-RAG.html", help="Output HTML file")
-args = parser.parse_args()
+def main():
+    parser = argparse.ArgumentParser(description="Build blog posts.")
+    parser.add_argument("input", nargs="?", help="Specific Markdown file to build. If omitted, builds all in ../posts")
+    args = parser.parse_args()
 
-POST_MD = Path(args.input)
-TEMPLATE = Path("../templates/post.html")
-OUTPUT = Path(args.output)
+    if args.input:
+        # Build specific file
+        convert_md_to_html(args.input)
+    else:
+        # Build all files in posts directory
+        script_dir = Path(__file__).parent
+        posts_dir = script_dir / "../posts"
+        
+        if not posts_dir.exists():
+            print(f"Error: Posts directory not found at {posts_dir}")
+            return
 
-raw = POST_MD.read_text()
+        print(f"Building all posts in {posts_dir}...")
+        for md_file in posts_dir.glob("*.md"):
+            convert_md_to_html(md_file)
 
-front_matter, body = raw.split("---", 2)[1:]
-meta = yaml.safe_load(front_matter)
-html_body = markdown.markdown(body, extensions=["fenced_code"])
-
-template = TEMPLATE.read_text()
-
-output = template \
-    .replace("{{ title }}", meta["title"]) \
-    .replace("{{ description }}", meta["description"]) \
-    .replace("{{ date }}", meta["date"]) \
-    .replace("{{ author }}", meta["author"]) \
-    .replace("{{ content }}", html_body)
-
-OUTPUT.write_text(output)
-
-print("Post built:", OUTPUT)
+if __name__ == "__main__":
+    main()

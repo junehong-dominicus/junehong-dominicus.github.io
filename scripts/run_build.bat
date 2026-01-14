@@ -16,11 +16,11 @@ echo [INFO] Ensuring dependencies are installed...
 pip install markdown pyyaml >nul
 
 REM Execute the Python build script
-echo [INFO] Starting build process...
-python build_post.py %*
+echo [INFO] Building all blog posts...
+python build_post.py
 
 REM Generate blog index
 echo [INFO] Updating blog index...
-python build_blog.py
+python update_blog_index.py
 
 endlocal

@@ -18,9 +18,9 @@ echo "[INFO] Ensuring dependencies are installed..."
 $PYTHON_CMD -m pip install markdown pyyaml >/dev/null
 
 # Execute the Python build script
-echo "[INFO] Starting build process..."
-$PYTHON_CMD build_post.py "$@"
+echo "[INFO] Building all blog posts..."
+$PYTHON_CMD build_post.py
 
 # Generate blog index
 echo "[INFO] Updating blog index..."
-$PYTHON_CMD build_blog.py
+$PYTHON_CMD update_blog_index.py
