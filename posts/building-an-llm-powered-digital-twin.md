@@ -192,7 +192,7 @@ This project explores how Digital Twins and language models can work together to
 
 By treating the Digital Twin as a living software entity and using LLMs as a cognitive layer, it becomes possible to move from monitoring to understanding—and from understanding to action.
 
-The full source code and system design are available on GitHub.
+The full source code and system design are available on [GitHub](https://github.com/junehong-dominicus/digital-twin-physical-ai).
 
 ---
 
