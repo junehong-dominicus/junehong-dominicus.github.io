@@ -1,34 +1,50 @@
 import argparse
+import logging
 import markdown
 import yaml
 from pathlib import Path
+from typing import Any, Dict, Optional, Tuple
 
-def convert_md_to_html(file_path):
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%H:%M:%S"
+)
+logger = logging.getLogger(__name__)
+
+def parse_front_matter(content: str) -> Tuple[Dict[str, Any], str]:
+    """
+    Separates YAML front matter from Markdown content.
+    Returns a tuple of (metadata_dict, markdown_body).
+    """
+    if content.startswith("---"):
+        parts = content.split("---", 2)
+        if len(parts) >= 3:
+            try:
+                meta = yaml.safe_load(parts[1]) or {}
+                body = parts[2]
+                return meta, body
+            except yaml.YAMLError as e:
+                logger.warning(f"YAML parsing error: {e}")
+    
+    return {}, content
+
+def convert_md_to_html(file_path: str) -> Optional[Path]:
     """
     Reads a Markdown file, converts it to HTML, and saves it with a .html extension.
     Returns the output path if successful, None otherwise.
     """
     md_file = Path(file_path)
     if not md_file.is_file():
-        print(f"Error: The file '{file_path}' does not exist.")
+        logger.error(f"The file '{file_path}' does not exist.")
         return None
 
     try:
-        content = md_file.read_text(encoding='utf-8')
+        content = md_file.read_text(encoding="utf-8")
+        meta, body = parse_front_matter(content)
 
-        meta = {}
-        body = content
-        # Strip Front Matter if present (to avoid rendering YAML as text)
-        if content.startswith("---"):
-            parts = content.split("---", 2)
-            if len(parts) >= 3:
-                try:
-                    meta = yaml.safe_load(parts[1]) or {}
-                    body = parts[2]
-                except yaml.YAMLError as e:
-                    print(f"Warning: YAML parsing error: {e}")
-
-        html_body = markdown.markdown(body, extensions=['fenced_code', 'tables'])
+        html_body = markdown.markdown(body, extensions=["fenced_code", "tables"])
         
         # Load Template
         script_dir = Path(__file__).parent
@@ -37,25 +53,25 @@ def convert_md_to_html(file_path):
         final_output = html_body
         
         if template_path.exists():
-            template = template_path.read_text(encoding='utf-8')
+            template = template_path.read_text(encoding="utf-8")
             final_output = template \
-                .replace("{{ title }}", meta.get("title", "Untitled")) \
-                .replace("{{ description }}", meta.get("description", "")) \
+                .replace("{{ title }}", str(meta.get("title", "Untitled"))) \
+                .replace("{{ description }}", str(meta.get("description", ""))) \
                 .replace("{{ date }}", str(meta.get("date", ""))) \
-                .replace("{{ author }}", meta.get("author", "")) \
+                .replace("{{ author }}", str(meta.get("author", ""))) \
                 .replace("{{ content }}", html_body)
         else:
-             print("Warning: Template not found. Outputting raw HTML body.")
+             logger.warning("Template not found. Outputting raw HTML body.")
 
         # Determine output file name (replace extension with .html)
         output_file = md_file.with_suffix(".html")
-        output_file.write_text(final_output, encoding='utf-8')
+        output_file.write_text(final_output, encoding="utf-8")
         
-        print(f"Successfully converted '{md_file}' to '{output_file}'")
+        logger.info(f"Successfully converted '{md_file}' to '{output_file}'")
         return output_file
 
     except Exception as e:
-        print(f"Error converting file: {e}")
+        logger.error(f"Error converting file: {e}")
         return None
 
 if __name__ == "__main__":
