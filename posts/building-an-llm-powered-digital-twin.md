@@ -60,7 +60,7 @@ The system is designed as four loosely coupled layers:
 ### Architecture Breakdown
 
 **Physical Layer**
-- ESP32-based device
+- IoT MCUs-based device
 - Temperature, vibration, and RPM sensors
 - Publishes telemetry via MQTT
 
