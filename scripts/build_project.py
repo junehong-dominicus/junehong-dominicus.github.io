@@ -24,7 +24,8 @@ def update_project_index():
                             "title": meta.get("title", "Untitled"),
                             "description": meta.get("description", ""),
                             "date": str(meta.get("date", "")),
-                            "link": f"projects/{md_file.stem}.html"
+                            "link": f"projects/{md_file.stem}.html",
+                            "image": meta.get("image", "")
                         })
             except Exception as e:
                 print(f"Skipping {md_file.name}: {e}")
@@ -34,8 +35,13 @@ def update_project_index():
 
     cards = []
     for p in projects:
+        img_html = ""
+        if p.get("image"):
+            img_html = f'<img src="{p["image"]}" alt="{p["title"]}" />'
+
         card = f"""
         <div class="project-card">
+          {img_html}
           <h3>{p['title']}</h3>
           <p>{p['description']}</p>
           <a class="project-link" href="{p['link']}">View details →</a>

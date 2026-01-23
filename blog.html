@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog – June Hong</title>
+  <link rel="icon" type="image/png" href="assets/images/JHD.png">
 
   <style>
     /* Global */
@@ -89,11 +90,15 @@
 
     /* Hero */
     header.hero {
-      padding: 1rem 10rem 1rem;
       background: radial-gradient(circle at top left, #e0f2fe, #f9fafb 60%);
       border-bottom: 1px solid #e5e7eb;
       text-align: left;
     }
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.5rem 1.5rem;
 
     .hero h1 {
       font-size: 2.4rem;
@@ -160,8 +165,8 @@
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-brand">
-        <div class="monogram">JH</div>
-        <span>June Hong</span>
+        <img src="assets/images/JHD.png" alt="JH" class="monogram" />
+        <span>June Hong, Dominicus</span>
       </a>
       <div class="nav-links">
         <a href="index.html">Home</a>
@@ -175,8 +180,10 @@
 
   <!-- Hero -->
   <header class="hero">
-    <h1>Blog</h1>
-    <p>Thoughts on software architecture, machine learning, embedded systems, leadership, and building real-world products.</p>
+    <div class="hero-inner">
+      <h1>Blog</h1>
+      <p>Thoughts on software architecture, machine learning, embedded systems, leadership, and building real-world products.</p>
+    </div>
   </header>
 
   <main>
@@ -228,3 +235,7 @@
         </div>
 <!-- BLOG_LIST_END -->
       </div>
+    </section>
+  </main>
+</body>
+</html>

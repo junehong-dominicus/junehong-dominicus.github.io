@@ -1,6 +1,7 @@
 import argparse
 from pathlib import Path
 from con_md_to_html import convert_md_to_html
+from update_blog_index import main as update_blog_index
 
 def main():
     parser = argparse.ArgumentParser(description="Build blog posts.")
@@ -22,6 +23,9 @@ def main():
         print(f"Building all posts in {posts_dir}...")
         for md_file in posts_dir.glob("*.md"):
             convert_md_to_html(md_file)
+            
+        print("Updating blog index...")
+        update_blog_index()
 
 if __name__ == "__main__":
     main()
