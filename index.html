@@ -5,233 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>June Hong – Software Architect & Technical Leader</title>
   <link rel="icon" type="image/png" href="assets/images/JHD.png">
-
-  <style>
-    /* ------------------------------
-       Global Styles
-    ------------------------------ */
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f8fafc;
-      color: #1f2937;
-      line-height: 1.7;
-    }
-
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    h1, h2, h3 {
-      margin-top: 0;
-      color: #111827;
-      letter-spacing: -0.025em;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 5rem;
-    }
-
-    section {
-      margin-top: 4rem;
-    }
-
-    /* ------------------------------
-       Navigation
-    ------------------------------ */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background-color: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    .nav-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .nav-brand {
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: #111827;
-    }
-
-    .monogram {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      background-color: #2563eb;
-      color: white;
-      border-radius: 6px;
-      margin-right: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 700;
-    }
-
-    .nav-links a {
-      margin-left: 1.5rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #4b5563;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #2563eb;
-    }
-
-    /* ------------------------------
-       Hero Section
-    ------------------------------ */
-    header.hero {
-      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
-      border-bottom: 1px solid #e5e7eb;
-      padding: 2rem 0;
-    }
-
-    .hero-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(to right, #1e40af, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: #1e40af;
-    }
-
-    .hero h2 {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #4b5563;
-      margin-bottom: 2rem;
-    }
-
-    .hero p {
-      max-width: 700px;
-      font-size: 1.125rem;
-      color: #374151;
-      margin-bottom: 1.5rem;
-    }
-
-    .button-row {
-      margin-top: 2rem;
-    }
-
-    .primary-button,
-    .secondary-button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      margin-right: 0.75rem;
-      transition: all 0.2s ease;
-    }
-
-    .primary-button {
-      background-color: #2563eb;
-      color: white;
-      box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
-    }
-    .primary-button:hover {
-      background-color: #1d4ed8;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 8px -1px rgba(37, 99, 235, 0.3);
-    }
-
-    .secondary-button {
-      border: 1px solid #d1d5db;
-      color: #374151;
-      background-color: white;
-    }
-    .secondary-button:hover {
-      border-color: #9ca3af;
-      background-color: #f9fafb;
-      color: #111827;
-    }
-
-    /* ------------------------------
-       Expertise Cards
-    ------------------------------ */
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 1rem;
-      border: 1px solid rgba(229, 231, 235, 0.5);
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-      border-color: #d1d5db;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-      color: #111827;
-      font-size: 1.25rem;
-    }
-
-    .card p {
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-      color: #4b5563;
-    }
-    
-    .card ul {
-      padding-left: 1.25rem;
-      color: #4b5563;
-    }
-    .card li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* ------------------------------
-       Footer
-    ------------------------------ */
-    footer {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-      color: #6b7280;
-      font-size: 0.9rem;
-      border-top: 1px solid #e5e7eb;
-      margin-top: 4rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5789326916093083"
      crossorigin="anonymous"></script>
 </head>
@@ -286,7 +60,7 @@
     <!-- Current Technical Focus -->
     <section id="focus">
       <h2>Current Technical Focus</h2>
-      <ul>
+      <ul class="feature-list">
         <li><strong>LLM-Powered Digital Twins:</strong> Stateful digital twin modeling, Real-time IoT telemetry, Explainable system behavior.</li>
         <li><strong>LangChain Ecosystem:</strong> Agents for structured reasoning, RAG pipelines, LangGraph workflows, LangSmith observability.</li>
         <li><strong>Physical AI Systems:</strong> Cyber-physical architectures, Edge + cloud hybrid intelligence, Human-in-the-loop decision systems.</li>
@@ -296,7 +70,7 @@
     <!-- LLM & Agent Architecture Expertise -->
     <section id="llm-expertise">
       <h2>LLM & Agent Architecture Expertise</h2>
-      <div class="expertise">
+      <div class="expertise-grid">
         <div class="card">
           <h3>LangChain</h3>
           <p>Tool-augmented agents, structured prompt design, and context-aware reasoning over live system state.</p>
@@ -338,7 +112,7 @@
     <section id="stack">
       <h2>Technical Stack</h2>
 
-      <div class="expertise">
+      <div class="expertise-grid">
         <div class="card">
           <h3>LLM & AI Systems</h3>
           <ul>
@@ -380,7 +154,7 @@
     <!-- Highlights -->
     <section id="highlights">
       <h2>Career Highlights</h2>
-      <ul>
+      <ul class="feature-list">
         <li><strong>Unified Industrial Protocol Gateway:</strong> Architected a modular IoT MCUs-based gateway integrating BACnet, Modbus, and MQTT.</li>
         <li><strong>VoIP Android Video Phones (NEC):</strong> Implemented SIP/RTP stacks and optimized real-time multimedia pipelines. <a href="https://www.youtube.com/watch?v=3A7L3uexReE" target="_blank">[Demo]</a></li>
         <li><strong>Android Platform Engineering (NTT):</strong> Led Android framework customization and HAL integration for carrier-grade devices. <a href="https://www.youtube.com/watch?v=4Y1-JsDp3IM" target="_blank">[Demo]</a></li>
@@ -390,7 +164,7 @@
     <!-- Architectural Philosophy -->
     <section id="philosophy">
       <h2>Architectural Philosophy</h2>
-      <ul>
+      <ul class="feature-list">
         <li><strong>LLMs as Cognitive Layers:</strong> Language models should reason, explain, and assist—not replace physics or control logic.</li>
         <li><strong>State Over Data:</strong> Digital Twins must model behavior and evolution, not just metrics.</li>
         <li><strong>Production First:</strong> Observability, tracing, and evaluation are mandatory for real-world AI systems.</li>
