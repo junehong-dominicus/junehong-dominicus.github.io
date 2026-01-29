@@ -1,7 +1,7 @@
 ---
 title: "SmartShopper: Revolutionizing the Grocery Run with Smart Categorization"
 description: "Introducing SmartShopper, an intelligent shopping list app that organizes your groceries by aisle, featuring smart categorization, quick entry, and accessibility-first design."
-date: 2025-09-10
+date: 2026-09-10
 author: June Hong
 tags: [Productivity, Mobile App, UX Design, Accessibility, Smart Algorithms]
 ---

@@ -25,5 +25,5 @@ For inquiries, email: junehong.dominicus@gmail.com
 
 ---
 
-© 2025 June Hong. All rights reserved.
+© 2026 June Hong. All rights reserved.
 
