@@ -1,16 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Why I’m Building Physical AI in 2026 – June Hong</title>
-    <link rel="stylesheet" href="../assets/style.css">
-    <link rel="icon" type="image/png" href="../assets/images/JHD.png">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5789326916093083"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why I’m Building Physical AI in 2026 – June Hong</title>
+  <link rel="icon" type="image/png" href="../assets/images/JHD.png">
+  <meta name="description" content="The next real leap in AI isn't a smarter model, it's intelligence that can sense, decide, and act in the physical world. Why I'm building Physical AI in 2026.">
+  <meta name="author" content="June Hong">
+
+  <style>
+    /* Global */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background-color: rgba(249, 250, 251, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #111827;
+    }
+
+    .nav-brand:hover {
+      text-decoration: none;
+    }
+
+    .monogram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 6px;
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      color: #374151;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #111827;
+    }
+
+    /* Article Header */
+    header.article-header {
+      padding: 4rem 1.5rem 2rem;
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .article-header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      color: #111827;
+    }
+
+    .article-meta {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+    }
+
+    /* Main Content */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    article {
+      font-size: 1.05rem;
+      color: #374151;
+    }
+
+    article h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: #111827;
+      font-size: 1.5rem;
+    }
+
+    article h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #111827;
+      font-size: 1.25rem;
+    }
+
+    article p {
+      margin-bottom: 1.5rem;
+    }
+
+    article ul, article ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    article li {
+      margin-bottom: 0.5rem;
+    }
+
+    article blockquote {
+      border-left: 4px solid #2563eb;
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      font-style: italic;
+      color: #4b5563;
+      background-color: #eff6ff;
+      padding: 1rem;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    article img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    article code {
+      background-color: #f3f4f6;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      font-size: 0.9em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #be185d;
+    }
+
+    article pre {
+      background-color: #1f2937;
+      color: #f9fafb;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+
+    article pre code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+      font-size: 0.9em;
+    }
+
+    article table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    article th, article td {
+      border: 1px solid #e5e7eb;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    article th {
+      background-color: #f9fafb;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #6b7280;
+      font-size: 0.9rem;
+      border-top: 1px solid #e5e7eb;
+      margin-top: 2rem;
+    }
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5789326916093083"
      crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-<nav>
+  <!-- Navigation -->
+  <nav>
     <div class="nav-inner">
       <a href="../index.html" class="nav-brand">
         <img src="../assets/images/JHD.png" alt="JH" class="monogram" />
@@ -20,121 +231,141 @@
         <a href="../index.html">Home</a>
         <a href="../projects.html">Projects</a>
         <a href="../blog.html">Blog</a>
+        <a href="https://github.com/junehong-dominicus" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank">LinkedIn</a>
       </div>
     </div>
-</nav>
+  </nav>
 
-<article>
-    <!-- Manual Ad Unit Container -->
-    <!-- Replace data-ad-slot value with your specific ID from AdSense -->
-    <div style="margin-bottom: 2rem; text-align: center; min-height: 100px;">
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-5789326916093083"
-           data-ad-slot="1816196154"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1>Why I’m Building Physical AI in 2026</h1>
+    <div class="article-meta">
+      By June Hong • <time>2026-01-08</time>
     </div>
-    <h1>🤖 Why I’m Building Physical AI in 2026</h1>
-    <p><em>January 2026 · June Hong</em></p>
+  </header>
 
-    <p>
+  <main>
+    <article>
+      <!-- Manual Ad Unit Container -->
+      <!-- Replace data-ad-slot value with your specific ID from AdSense -->
+      <div style="margin-bottom: 2rem; text-align: center; min-height: 100px;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5789326916093083"
+             data-ad-slot="1816196154"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <p>
         Over the past decade, AI has made incredible progress in the digital world —
         text, images, recommendations, and predictions. But in 2026, I believe the
         next real leap isn’t just smarter models. It’s intelligence that can
         <strong>sense, decide, and act in the physical world</strong>.
-    </p>
+      </p>
 
-    <p>
+      <p>
         That’s why I’m building Physical AI.
-    </p>
+      </p>
 
-    <h2>From Software to Systems</h2>
-    <p>
+      <h2>From Software to Systems</h2>
+      <p>
         My background spans embedded systems, mobile platforms, cloud infrastructure,
         and machine learning. I’ve worked close to hardware — sensors, networks,
         real-time constraints — and I’ve also built scalable cloud services used by
         millions.
-    </p>
+      </p>
 
-    <p>
+      <p>
         One pattern keeps repeating: most AI systems stop at inference.
         They classify, predict, or generate — but someone else has to turn that output
         into action.
-    </p>
+      </p>
 
-    <p>
+      <p>
         Physical AI closes that loop.
-    </p>
+      </p>
 
-    <h2>What Physical AI Means to Me</h2>
-    <p>
+      <h2>What Physical AI Means to Me</h2>
+      <p>
         Physical AI is not just robotics. It’s intelligence embedded into
         real-world systems:
-    </p>
+      </p>
 
-    <ul>
+      <ul>
         <li>Devices that observe the environment through sensors</li>
         <li>Models that reason under latency, power, and reliability constraints</li>
         <li>Systems that take actions — not suggestions</li>
-    </ul>
+      </ul>
 
-    <p>
+      <p>
         This includes edge devices, embedded Linux systems, MCUs, and hybrid
         cloud–edge architectures. The challenge isn’t only accuracy — it’s
         robustness, timing, and safety.
-    </p>
+      </p>
 
-    <h2>Why Now?</h2>
-    <p>
+      <h2>Why Now?</h2>
+      <p>
         Three things make 2026 the right moment:
-    </p>
+      </p>
 
-    <ul>
+      <ul>
         <li>
-            <strong>Edge hardware is ready</strong> — NPUs and accelerators are now
-            practical outside data centers.
+          <strong>Edge hardware is ready</strong> — NPUs and accelerators are now
+          practical outside data centers.
         </li>
         <li>
-            <strong>ML tooling has matured</strong> — deployment, monitoring, and
-            optimization are no longer research-only problems.
+          <strong>ML tooling has matured</strong> — deployment, monitoring, and
+          optimization are no longer research-only problems.
         </li>
         <li>
-            <strong>Real-world systems demand intelligence</strong> — energy,
-            manufacturing, mobility, and infrastructure all need smarter control.
+          <strong>Real-world systems demand intelligence</strong> — energy,
+          manufacturing, mobility, and infrastructure all need smarter control.
         </li>
-    </ul>
+      </ul>
 
-    <p>
+      <p>
         The gap between “AI demo” and “AI system” is where most interesting work lives.
         That gap is exactly what I want to explore.
-    </p>
+      </p>
 
-    <h2>What I’m Building</h2>
-    <p>
+      <h2>What I’m Building</h2>
+      <p>
         My Physical AI projects focus on:
-    </p>
+      </p>
 
-    <ul>
+      <ul>
         <li>Sensor fusion and real-time data pipelines</li>
         <li>Edge inference with cloud coordination</li>
         <li>Decision-making systems that operate continuously</li>
         <li>Integration with Digital Twins for simulation and prediction</li>
-    </ul>
+      </ul>
 
-    <p>
+      <p>
         These projects are open, iterative, and built in public. Some will fail.
         That’s part of the point.
-    </p>
+      </p>
 
-    <h2>What This Blog Is For</h2>
-    <p>
+      <h2>What This Blog Is For</h2>
+      <p>
         This blog is a working notebook — not marketing.
         I’ll document design decisions, experiments, mistakes, and lessons learned
         while building Physical AI systems.
-    </p>
+      </p>
 
-    <p>
+      <p>
         If you’re interested in where AI meets hardware, systems engineering,
-        and the real world, you’re in t
+        and the real world, you’re in the right place. Follow along as I build,
+        break, and rebuild these systems in public.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    © 2026 June Hong — Built with plain HTML & CSS
+  </footer>
+
+</body>
+</html>
