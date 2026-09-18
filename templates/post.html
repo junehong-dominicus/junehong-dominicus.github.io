@@ -242,7 +242,9 @@
     <h1>{{ title }}</h1>
     <div class="article-meta">
       By {{ author }} • <time>{{ date }}</time>
+      <span> • {{ read_time }} min read</span>
     </div>
+    {{ tags_html }}
   </header>
 
   <main>
@@ -258,6 +260,7 @@
              data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
+      {{ article_content }}
       {{ content }}
     </article>
   </main>
