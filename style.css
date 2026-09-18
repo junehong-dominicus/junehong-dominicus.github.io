@@ -80,13 +80,19 @@ h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; }
 h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 700; margin-bottom: 2rem; }
 h3 { font-size: 1.35rem; font-weight: 600; }
 
-/* Code-comment style kicker on every section heading — zero markup needed */
+/* Reticle-mark icon on every section heading — echoes the card corner
+   brackets elsewhere on the site. Zero markup needed. */
 main h2::before,
 .legal-content h2::before {
-  content: "// ";
-  color: var(--primary);
-  font-family: var(--font-mono);
-  font-weight: 500;
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-right: 0.55rem;
+  vertical-align: -0.05em;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='%2322d3ee'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M4%209V6a2%202%200%200%201%202-2h3'/%3E%3Cpath%20d='M20%209V6a2%202%200%200%200-2-2h-3'/%3E%3Cpath%20d='M4%2015v3a2%202%200%200%200%202%202h3'/%3E%3Cpath%20d='M20%2015v3a2%202%200%200%201-2%202h-3'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 p { font-size: 1.05rem; color: var(--text-muted); }
