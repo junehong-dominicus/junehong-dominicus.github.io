@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traditional Algorithms vs. Edge AI Models: Choosing the Right Approach at the Edge – June Hong</title>
+  <link rel="icon" type="image/png" href="../assets/images/JHD.png">
+  <meta name="description" content="A practical comparison of rule-based traditional algorithms and quantized Edge AI models for embedded and IoT systems — pros, cons, and when each one wins.">
+  <meta name="author" content="June Hong">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5789326916093083"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/JHD.png" alt="JH" class="monogram" />
+        <span>June Hong, Dominicus</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="https://github.com/junehong-dominicus" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1>Traditional Algorithms vs. Edge AI Models: Choosing the Right Approach at the Edge</h1>
+    <div class="article-meta">
+      By June Hong • <time>2026-09-20</time>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <!-- Manual Ad Unit Container -->
+      <!-- Replace data-ad-slot value with your specific ID from AdSense -->
+      <div style="margin-bottom: 2rem; text-align: center; min-height: 100px;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-5789326916093083"
+             data-ad-slot="1816196154"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <p>
+        Every time I design a sensing pipeline for an MCU-class device, the same question comes up
+        before a single line of firmware gets written: <strong>does this need a model, or does it
+        need a threshold?</strong>
+      </p>
+      <p>
+        It's tempting to reach for machine learning by default in 2026. But on a $2 microcontroller
+        running on a coin cell, the wrong choice costs you battery life, latency, and certification
+        headaches. Here's how I actually decide between a traditional algorithm and an Edge AI model
+        — and why, more often than people expect, the boring answer wins.
+      </p>
+
+      <h2>What I Mean by "Traditional Algorithm"</h2>
+      <p>
+        A traditional algorithm here means deterministic, hand-authored logic: fixed thresholds,
+        finite state machines, PID control loops, moving averages, FFT-based frequency analysis,
+        and rule-based decision trees. The behavior is fully specified by the engineer — given the
+        same input, it always produces the same output, and you can trace every branch by hand.
+      </p>
+
+      <h2>What I Mean by "Edge AI Model"</h2>
+      <p>
+        An Edge AI model is a machine learning model — typically a quantized TFLite Micro network,
+        a small CNN, or a GRU/LSTM — trained on data and deployed to run inference directly on the
+        device, without a round trip to the cloud. It learns the decision boundary from examples
+        rather than from rules the engineer writes explicitly.
+      </p>
+
+      <hr />
+
+      <h2>Traditional Algorithm: Pros and Cons</h2>
+      <table>
+        <thead>
+          <tr><th>Pros</th><th>Cons</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fully deterministic and explainable — every decision traces to a line of code</td>
+            <td>Brittle against noisy, drifting, or multi-variable real-world signals</td>
+          </tr>
+          <tr>
+            <td>Tiny memory and compute footprint, runs on the cheapest MCUs</td>
+            <td>Thresholds have to be hand-tuned per device, per environment, per install</td>
+          </tr>
+          <tr>
+            <td>Trivial to certify and audit for safety-critical systems</td>
+            <td>Doesn't generalize — a new failure pattern needs new code, not new data</td>
+          </tr>
+          <tr>
+            <td>No training data or labeling pipeline required</td>
+            <td>Struggles to fuse many sensor channels into one confident decision</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Edge AI Model: Pros and Cons</h2>
+      <table>
+        <thead>
+          <tr><th>Pros</th><th>Cons</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Learns complex, nonlinear, multi-sensor patterns humans can't hand-encode</td>
+            <td>"Explainability" is harder — you get a confidence score, not a reason</td>
+          </tr>
+          <tr>
+            <td>Generalizes across devices and conditions once trained on representative data</td>
+            <td>Needs a labeled dataset and a training/validation pipeline before it ships</td>
+          </tr>
+          <tr>
+            <td>Improves by retraining on new data instead of rewriting logic</td>
+            <td>Larger memory/flash footprint, even after INT8 quantization</td>
+          </tr>
+          <tr>
+            <td>Handles sensor fusion (vibration + temperature + current) as one model</td>
+            <td>Model drift and edge cases require monitoring, not just a code review</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Why Edge AI Model Instead of Traditional Algorithm</h2>
+      <p>
+        I reach for an Edge AI model when at least one of these is true:
+      </p>
+      <ul>
+        <li>
+          <strong>The failure signature is multi-dimensional.</strong> A bearing about to fail
+          doesn't just vibrate louder — it changes frequency signature, temperature, and current
+          draw together. Encoding that as nested if/else thresholds gets unmaintainable fast; a
+          small GRU learns the joint pattern directly.
+        </li>
+        <li>
+          <strong>The environment isn't static.</strong> Threshold-based systems assume "normal"
+          looks the same everywhere. A model trained on diverse conditions generalizes across
+          machines, installs, and seasons without a re-tuning pass at every site.
+        </li>
+        <li>
+          <strong>False positives/negatives have a real cost.</strong> A single fixed threshold
+          forces a trade-off between missed detections and nuisance alarms. A trained classifier
+          can push the ROC curve further than a hand-picked cutoff ever will.
+        </li>
+        <li>
+          <strong>You have — or can generate — labeled data.</strong> Machine learning is only
+          worth the added complexity if there's a dataset to learn from. No data, no model.
+        </li>
+      </ul>
+      <p>
+        And I deliberately <em>don't</em> reach for a model when the opposite is true: a single
+        clean signal, a hard safety limit that must never be probabilistic, or a product that has
+        to ship before any training data exists. In those cases, a threshold or a state machine is
+        not a compromise — it's the correct engineering choice.
+      </p>
+
+      <hr />
+
+      <h2>Examples From Production Systems</h2>
+
+      <h3>Fire Suppression Trigger (Traditional → Edge AI)</h3>
+      <p>
+        On the Physical AI framework I built at Epic Safety, the first-generation trigger logic was
+        a fixed temperature/smoke-density threshold on an ESP32. It worked, but it couldn't tell a
+        real ignition event from a false alarm caused by welding sparks or steam. Replacing the
+        threshold with a quantized TFLite model — trained on labeled thermal and smoke sensor
+        traces — cut false positives significantly while holding sub-100ms inference latency on the
+        same hardware.
+      </p>
+
+      <h3>Industrial Vibration Monitoring (Threshold → GRU)</h3>
+      <p>
+        A classic vibration alarm trips when RMS amplitude crosses a fixed line. On the Industrial
+        Edge AI Gateway project, a GRU-based inference engine running on TFLite Micro replaced that
+        threshold, learning the difference between a normal startup transient and an actual bearing
+        fault — something a single amplitude cutoff structurally cannot distinguish.
+      </p>
+
+      <h3>Motion Detection (Traditional, and it stayed that way)</h3>
+      <p>
+        Early motion detection work I did on MPEG-2 TS streams at Varovision used frame-difference
+        and macroblock-based algorithms — no ML involved. For that use case, a lightweight
+        deterministic algorithm was the right call: the signal was simple, latency budgets were
+        tight, and the hardware of that era couldn't have run a model anyway. Not every problem
+        needs to wait for a neural network.
+      </p>
+
+      <hr />
+
+      <h2>A Simple Decision Model</h2>
+      <table>
+        <thead>
+          <tr><th>Question</th><th>Traditional Algorithm</th><th>Edge AI Model</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single, clean signal?</td>
+            <td>✅ Yes</td>
+            <td>Overkill</td>
+          </tr>
+          <tr>
+            <td>Multi-sensor fusion needed?</td>
+            <td>Gets messy fast</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>Hard safety limit, must be provable?</td>
+            <td>✅ Yes</td>
+            <td>Avoid as the sole gate</td>
+          </tr>
+          <tr>
+            <td>Conditions vary across deployments?</td>
+            <td>Needs per-site tuning</td>
+            <td>✅ Yes</td>
+          </tr>
+          <tr>
+            <td>No labeled data available yet?</td>
+            <td>✅ Yes, ship this first</td>
+            <td>Not yet</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Edge AI doesn't replace traditional algorithms — it extends the toolbox for the problems
+        thresholds were never built to solve. The best embedded systems I've shipped usually mix
+        both: a deterministic safety floor built from simple rules, with a model layered on top for
+        the nuanced, multi-signal judgment calls. Pick the tool the problem actually needs, not the
+        one that's trending.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="../index.html">Home</a> |
+      <a href="../projects.html">Projects</a> |
+      <a href="../blog.html">Blog</a> |
+      <a href="../marketing.html">Marketing</a> |
+      <a href="../privacy-policy.html">Privacy Policy</a>
+    </div>
+    <p>© 2026 June Hong — Built with plain HTML & CSS</p>
+  </footer>
+
+</body>
+</html>
