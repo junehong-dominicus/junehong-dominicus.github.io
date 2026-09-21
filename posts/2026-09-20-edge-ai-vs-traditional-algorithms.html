@@ -184,7 +184,7 @@
       <h3>Fire Suppression Trigger (Traditional → Edge AI)</h3>
       <p>
         On the Physical AI framework I built at Epic Safety, the first-generation trigger logic was
-        a fixed temperature/smoke-density threshold on an ESP32. It worked, but it couldn't tell a
+        a fixed temperature/smoke-density threshold on a low-power microcontroller. It worked, but it couldn't tell a
         real ignition event from a false alarm caused by welding sparks or steam. Replacing the
         threshold with a quantized TFLite model — trained on labeled thermal and smoke sensor
         traces — cut false positives significantly while holding sub-100ms inference latency on the
