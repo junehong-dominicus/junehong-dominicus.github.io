@@ -27,7 +27,7 @@ Once the data sits on one timeline, optimization gets concrete:
 
 Most of these aren't neural networks yet. They're trends, and trends are what you should ship first. Learned anomaly detection on the device comes later, once the data shows where a hand-written rule stops working.
 
-Two things I've learned from these projects:
+Two principles I'm building in from day one:
 
 1. Be honest about the interfaces. Modbus, EtherNet/IP and BACnet are the easy part. IPC-CFX, HERMES and SECS/GEM on placement and inspection machines usually need joint engineering.
 2. Poll wisely. A gateway reading every few hundred milliseconds won't catch millisecond sensor edges. Let the PLC count and time the events, and let the gateway read the results.
