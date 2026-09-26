@@ -28,12 +28,14 @@ Once the data is in one place, management gets concrete:
 • The fire panel goes into alarm → off-site staff are notified in seconds, with site context  
 • kWh delivered per charger and metered solar generation → time-stamped, device-attributable data for low-carbon fuel credits and renewable energy certificates (RECs)  
 
+Carbon credits are the part most site owners overlook. EV charging can earn credits under low-carbon fuel programs such as California's LCFS, Canada's Clean Fuel Regulations and Germany's GHG quota. Solar generation can earn RECs, Guarantees of Origin in Europe or I-RECs in many other markets. Every program asks for the same thing: measured, time-stamped energy data that an auditor can trace to a specific device. A gateway that already reads the meters and chargers, and identifies itself with its own device certificate, can supply that data. That can turn a monitoring project into a recurring revenue stream.
+
 Three principles I'm building in from day one:
 
 1. Put each control function where its response time belongs. Anti-islanding, battery protection and fire shutdown run in milliseconds inside certified equipment. A round trip to the cloud, especially over cellular, takes hundreds of milliseconds to seconds, which is fine for dispatch, arbitrage and peak shaving and far too slow for grid protection. The gateway monitors the safety systems and never replaces them.
-2. The gateway is not a revenue meter. Credit programs need an approved meter. The gateway's job is to collect cumulative kWh totals from it so the numbers survive a missed reading.
+2. The gateway is not a revenue meter. Credit programs need a meter approved by the local metrology authority. The gateway's job is to collect cumulative kWh totals from it, not instantaneous power, so the numbers survive a missed reading. Verification and registration stay with the program operator or aggregator.
 3. Be honest about the interfaces. Modbus, BACnet and OCPP are the easy part. Vendor CAN protocols on some batteries, and utility interfaces like DNP3 or IEEE 2030.5, have to be scoped early, per project.
 
 If you run solar or storage sites, which piece of equipment is still a black box to you?
 
-#IIoT #EdgeComputing #SolarEnergy #EnergyStorage #EVCharging #EMS #RenewableEnergy
+#IIoT #EdgeComputing #SolarEnergy #EnergyStorage #EVCharging #EMS #RenewableEnergy #CarbonCredits
