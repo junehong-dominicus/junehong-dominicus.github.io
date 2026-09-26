@@ -28,7 +28,7 @@ Once the data is in one place, management gets concrete:
 • The fire panel goes into alarm → off-site staff are notified in seconds, with site context  
 • kWh delivered per charger and metered solar generation → time-stamped, device-attributable data for low-carbon fuel credits and renewable energy certificates (RECs)  
 
-Three things I've learned from these projects:
+Three principles I'm building in from day one:
 
 1. Put each control function where its response time belongs. Anti-islanding, battery protection and fire shutdown run in milliseconds inside certified equipment. A cellular round trip takes hundreds of milliseconds to seconds, which is fine for dispatch, arbitrage and peak shaving and far too slow for grid protection. The gateway monitors the safety systems and never replaces them.
 2. The gateway is not a revenue meter. Credit programs need an approved meter. The gateway's job is to collect cumulative kWh totals from it so the numbers survive a missed reading.
