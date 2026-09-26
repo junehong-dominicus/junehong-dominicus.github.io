@@ -27,6 +27,8 @@ Once the data is in one place, management gets concrete:
 • High-power discharge scheduled → pre-cool the enclosure  
 • Fire panel alarm → off-site staff notified in seconds  
 
+These start as trend rules. Edge AI comes next, once history shows where a fixed threshold stops working: learned baselines for inverter output, and anomaly detection on battery cells before an alarm limit trips.
+
 Carbon credits are the part most owners overlook. EV charging can earn low-carbon fuel credits (California's LCFS, Canada's Clean Fuel Regulations, Germany's GHG quota). Solar can earn RECs, Guarantees of Origin or I-RECs. Every program needs measured, time-stamped energy data traceable to a specific device, which a gateway with its own device certificate can supply. That can turn monitoring into recurring revenue.
 
 Three principles I'm building in from day one:
