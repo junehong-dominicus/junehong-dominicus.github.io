@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IIoT Edge Devices: AI-Production Optimization on the SMT Line – June Hong</title>
+  <link rel="icon" type="image/png" href="../assets/images/JHD.png">
+  <meta name="description" content="How IIoT edge gateways bring PLC, oven, sensor, and building data from a surface-mount technology line onto one timeline — and why trend-based maintenance comes before AI.">
+  <meta name="author" content="June Hong">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5789326916093083"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/JHD.png" alt="JH" class="monogram" />
+        <span>June Hong, Dominicus</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="https://github.com/junehong-dominicus" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1>IIoT Edge Devices: AI-Production Optimization on the SMT Line</h1>
+    <div class="article-meta">
+      By June Hong • <time>2026-09-26</time>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <p>
+        Walk down a surface-mount technology (SMT) line and count the controllers: printer, solder
+        paste inspection (SPI), pick-and-place, reflow oven, automated optical inspection (AOI),
+        conveyors. Each one comes from a different vendor and exposes its data a different way. The
+        room's temperature and humidity sit in yet another system, the building management system (BMS).
+      </p>
+      <p>
+        Every machine has data. Maintenance still can't see the whole line in one place.
+        <strong>That's the problem an edge gateway should solve before anyone says "AI".</strong>
+      </p>
+
+      <div class="diagram-frame">
+        <img src="../images_for_blog/iiot-edge-devices-ai-production-optimization-linkedin.png" alt="Diagram of line PLC, reflow oven, sensors, and BMS feeding an edge gateway that sends data to a cloud or on-premise dashboard, with example trend-to-action rules" />
+        <p class="diagram-caption">Fig. 1 — Field data from the SMT line flows through an edge gateway to a cloud or on-premise dashboard</p>
+      </div>
+
+      <h2>Getting the Data Off the Line</h2>
+      <p>
+        An edge gateway paired with a protocol coprocessor speaks the industrial protocols the line
+        already uses. Here's what each source can provide today:
+      </p>
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Protocol</th><th>Typical data points</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Line PLC and conveyors</td>
+            <td>Modbus TCP, EtherNet/IP</td>
+            <td>Board counts, transit times, run/stop state, jam and time-out faults</td>
+          </tr>
+          <tr>
+            <td>Extra sensors</td>
+            <td>Modbus RTU via RS-485 remote I/O</td>
+            <td>Photoelectric beams, 4–20 mA vacuum and air pressure, temperature probes</td>
+          </tr>
+          <tr>
+            <td>Reflow oven controller</td>
+            <td>Modbus RTU / TCP (model dependent)</td>
+            <td>Zone set-points and actual temperatures, conveyor speed, alarms</td>
+          </tr>
+          <tr>
+            <td>BMS / HVAC</td>
+            <td>BACnet/IP, BACnet MS/TP</td>
+            <td>Production-area humidity and temperature</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The remote I/O module deserves a mention. Sensors that were never wired to the PLC can be
+        added on a cheap RS-485 module, <strong>without touching the PLC program</strong>. That keeps
+        monitoring independent of line control, which matters to anyone who owns that PLC code.
+      </p>
+
+      <h2>Getting the Data Out Safely</h2>
+      <p>
+        The gateway connects to a cloud or on-premise dashboard over <strong>TLS with mutual
+        certificate authentication</strong>. Each device has its own X.509 certificate, so only
+        provisioned gateways can connect. It collects equipment status, process values, and
+        counters only. It never needs product design data such as Gerber files or placement programs.
+      </p>
+      <p>
+        The uplink follows the site's IT policy. Where outbound OT traffic is allowed, the gateway uses
+        plant Ethernet or Wi-Fi. Many electronics manufacturers keep production equipment off the
+        corporate network entirely. For them, a cellular variant sends line data out over its own
+        LTE-M / NB-IoT link. Cellular IoT is low-bandwidth, so it suits status, alarms, and summarized
+        trends rather than raw high-rate streams.
+      </p>
+
+      <hr />
+
+      <h2>From One Timeline to Real Optimization</h2>
+      <p>
+        Once the data sits on one timeline, optimization gets concrete. These are the rules I'd start
+        with. Each is defined together with the plant team, using data points confirmed on the actual line.
+      </p>
+      <table>
+        <thead>
+          <tr><th>What's watched</th><th>Trend</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supply vacuum</td>
+            <td>Falls a little every day</td>
+            <td>Check the pump, filters, and leaks before pick errors start</td>
+          </tr>
+          <tr>
+            <td>Conveyor jams</td>
+            <td>Jam counts rise, transit times get longer</td>
+            <td>Clean sensors or belts at the next planned stop</td>
+          </tr>
+          <tr>
+            <td>Reflow zones</td>
+            <td>Actual temperature drifts from the set-point</td>
+            <td>Warn before the thermal profile goes out of spec</td>
+          </tr>
+          <tr>
+            <td>Room environment</td>
+            <td>Humidity or temperature leaves its band</td>
+            <td>Alert facilities and flag that production window for quality review</td>
+          </tr>
+          <tr>
+            <td>Compressed air</td>
+            <td>Low-pressure events</td>
+            <td>Alert before pneumatic faults stop the line</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Most of these aren't neural networks yet. <strong>They're trends, and trends are what you
+        should ship first.</strong> They're cheap, explainable, and useful from the first week. Learned
+        anomaly detection on the device comes later, once the data shows where a hand-written rule
+        stops working. I wrote more about that trade-off in
+        <a href="2026-09-20-edge-ai-vs-traditional-algorithms.html">Traditional Algorithms vs. Edge AI Models</a>.
+      </p>
+
+      <hr />
+
+      <h2>Two Principles I'm Building In from Day One</h2>
+      <ul>
+        <li>
+          <strong>Be honest about the interfaces.</strong> Modbus, EtherNet/IP, and BACnet are the easy
+          part. Placement and inspection machines usually expose data through IPC-CFX, IPC-HERMES-9852,
+          or SECS/GEM, and those need joint engineering. Until then, the summary data these machines
+          already share with the line PLC (placement count, error flags, state) is a practical start.
+        </li>
+        <li>
+          <strong>Poll wisely.</strong> A gateway reading every few hundred milliseconds won't catch
+          millisecond sensor edges. Let the PLC count and time the events, and let the gateway read
+          the results.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Final Thoughts</h2>
+      <p>
+        AI-driven production optimization starts with plumbing, not models. Get the PLC, oven, sensor,
+        and environment data onto one secure timeline, ship simple trend rules that maintenance
+        actually trusts, and let the data tell you where a model will earn its place.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="../index.html">Home</a> |
+      <a href="../projects.html">Projects</a> |
+      <a href="../blog.html">Blog</a> |
+      <a href="../marketing.html">Marketing</a> |
+      <a href="../privacy-policy.html">Privacy Policy</a>
+    </div>
+    <p>© 2026 June Hong — Built with plain HTML & CSS</p>
+  </footer>
+
+</body>
+</html>

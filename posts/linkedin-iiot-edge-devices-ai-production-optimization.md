@@ -1,5 +1,7 @@
 # LinkedIn Post Draft — IIoT Edge Devices: AI-Production Optimization
 
+Companion article: [IIoT Edge Devices: AI-Production Optimization on the SMT Line](https://junehong-dominicus.github.io/posts/2026-09-26-iiot-edge-devices-ai-production-optimization.html)
+
 Image: `images_for_blog/iiot-edge-devices-ai-production-optimization-linkedin.png` (1200×1200)
 
 ---
