@@ -1,10 +1,12 @@
-# LinkedIn Post Draft — IIoT Edge Devices: Solar Farm Management
+# LinkedIn Post Draft — IIoT Edge AI Devices: Solar Farm Management
+
+Companion article: [IIoT Edge AI Devices: Solar Farm Management](https://junehong-dominicus.github.io/posts/2026-09-26-iiot-edge-devices-solar-farm-management.html)
 
 Image: `images_for_blog/iiot-edge-devices-solar-farm-management-linkedin.png` (1200×1200)
 
 ---
 
-**IIoT Edge Devices — Solar Farm Management**
+**IIoT Edge AI Devices — Solar Farm Management**
 
 A solar-plus-storage site has more vendors than people on site: photovoltaic (PV) inverters, a meteorological (met) station, trackers, a battery system, enclosure HVAC, a fire and gas panel, and now EV chargers. Each exposes its data differently, and most sites are unstaffed.
 

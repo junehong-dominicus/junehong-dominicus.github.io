@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IIoT Edge AI Devices: Solar Farm Management – June Hong</title>
+  <link rel="icon" type="image/png" href="../assets/images/JHD.png">
+  <meta name="description" content="How IIoT edge gateways bring inverter, met station, battery, HVAC, fire panel, and EV charger data from a solar-plus-storage site onto one timeline — and where control should and shouldn't run.">
+  <meta name="author" content="June Hong">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5789326916093083"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand">
+        <img src="../assets/images/JHD.png" alt="JH" class="monogram" />
+        <span>June Hong, Dominicus</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="https://github.com/junehong-dominicus" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <h1>IIoT Edge AI Devices: Solar Farm Management</h1>
+    <div class="article-meta">
+      By June Hong • <time>2026-09-26</time>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <p>
+        A solar-plus-storage site has more vendors than people on site. You'll find photovoltaic (PV)
+        inverters, a meteorological (met) station, trackers, a battery energy storage system with its
+        own battery management system (BMS) and power conversion system (PCS), enclosure HVAC, a fire
+        and gas panel, and increasingly EV chargers too. Each one exposes its data differently, and
+        most of these sites are unstaffed.
+      </p>
+      <p>
+        The energy management system (EMS) needs all of it on one timeline, plus a safe way to send
+        set-points back. <strong>That's the job of an edge gateway, the edge device that sits between
+        the field equipment and the dashboard.</strong>
+      </p>
+
+      <div class="diagram-frame">
+        <img src="../images_for_blog/iiot-edge-devices-solar-farm-management-linkedin.png" alt="Diagram of solar inverters, met station, battery BMS and PCS, enclosure HVAC, fire and gas panel, and EV chargers feeding an edge gateway that sends data to a cloud or on-premise dashboard, with example trend-to-action rules" />
+        <p class="diagram-caption">Fig. 1 — Field data from a solar-plus-storage site flows through an edge gateway to a cloud or on-premise dashboard</p>
+      </div>
+
+      <h2>Getting the Data Off the Site</h2>
+      <p>
+        An edge gateway paired with a protocol coprocessor speaks the industrial protocols the site
+        already uses. It can read field devices, and write set-points back to them where the device allows it.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Source</th><th>Protocol</th><th>Typical data points</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PV inverters</td>
+            <td>Modbus TCP / RTU (SunSpec register maps)</td>
+            <td>DC string voltage and current, AC active and reactive power, energy totals, fault codes</td>
+          </tr>
+          <tr>
+            <td>Met station and trackers</td>
+            <td>Modbus RTU on RS-485, or 4–20 mA through a remote I/O module</td>
+            <td>Irradiance, module temperature, wind, tracker position and stow state</td>
+          </tr>
+          <tr>
+            <td>Battery BMS and PCS</td>
+            <td>Modbus TCP</td>
+            <td>State of charge (SoC), state of health (SoH), rack temperatures, cell imbalance, PCS mode and output</td>
+          </tr>
+          <tr>
+            <td>Enclosure HVAC</td>
+            <td>BACnet/IP, BACnet MS/TP, Modbus</td>
+            <td>Cooling status and set-points</td>
+          </tr>
+          <tr>
+            <td>Fire and gas panel</td>
+            <td>Modbus, or remote I/O on the panel's auxiliary outputs</td>
+            <td>Alarm, trouble, and supervisory states, gas levels</td>
+          </tr>
+          <tr>
+            <td>EV chargers</td>
+            <td>Open Charge Point Protocol (OCPP 1.6J)</td>
+            <td>Charger status, sessions, meter values</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        One more source matters a lot in practice: <strong>an on-site EMS that has no remote access of
+        its own</strong>. If it exposes its data and set-points as a Modbus TCP server, the gateway
+        polls it like any other device. The EMS keeps making its real-time decisions on site, and gains
+        a remote dashboard, alerts, history, and remote schedule changes without being rewritten.
+      </p>
+
+      <h2>Getting the Data Out Safely</h2>
+      <p>
+        The gateway connects to a cloud or on-premise dashboard over <strong>TLS with mutual
+        certificate authentication</strong>. Each device has its own X.509 certificate, so only
+        provisioned gateways can connect, and every reading can be traced to a specific site and device.
+      </p>
+      <p>
+        The uplink follows the owner's IT policy. Where a site network is available and approved, the
+        gateway uses Ethernet or Wi-Fi. Where the owner wants monitoring kept off their network, or the
+        site is remote, a cellular variant uses its own LTE-M / NB-IoT link. It only makes outbound
+        connections, so it opens no inbound path from the internet into the site.
+      </p>
+
+      <hr />
+
+      <h2>From One Timeline to Real Site Management</h2>
+      <p>
+        Once the data is in one place, management gets concrete:
+      </p>
+      <table>
+        <thead>
+          <tr><th>What's watched</th><th>Trend or event</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Inverter output vs. met data</td>
+            <td>Output falls below what irradiance and temperature predict</td>
+            <td>Check for soiling, string faults, or clipping</td>
+          </tr>
+          <tr>
+            <td>Battery racks</td>
+            <td>Cell imbalance or temperature spread grows on one rack</td>
+            <td>Schedule an inspection before it becomes a derate</td>
+          </tr>
+          <tr>
+            <td>Battery + HVAC</td>
+            <td>A high-power charge or discharge is scheduled</td>
+            <td>Pre-cool the enclosure instead of running HVAC hard afterward</td>
+          </tr>
+          <tr>
+            <td>Fire and gas panel</td>
+            <td>Alarm or trouble state</td>
+            <td>Notify off-site staff in seconds, with site context</td>
+          </tr>
+          <tr>
+            <td>Meter, BMS, PCS, tariff</td>
+            <td>Peak demand or a price signal</td>
+            <td>The EMS sends charge/discharge set-points to the PCS</td>
+          </tr>
+          <tr>
+            <td>Chargers vs. solar and storage</td>
+            <td>Charger load rises</td>
+            <td>See it against available solar output and battery SoC</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Carbon Credits: The Overlooked Revenue</h2>
+      <p>
+        A solar, storage, and EV charging site produces clean energy, and its chargers displace fossil
+        fuel. Several kinds of program turn that into tradable credits or certificates:
+      </p>
+      <ul>
+        <li>
+          <strong>Low-carbon fuel credits for EV charging</strong>, such as California's Low Carbon Fuel
+          Standard (LCFS), Canada's Clean Fuel Regulations, and Germany's GHG quota. They are earned on
+          the kWh delivered to vehicles.
+        </li>
+        <li>
+          <strong>Renewable energy certificates</strong> for metered solar generation: RECs in North
+          America, Guarantees of Origin in Europe, and I-RECs in many other markets.
+        </li>
+        <li>
+          <strong>Corporate emissions and ESG reporting</strong>, which needs generation, self-consumption,
+          and grid import/export data even where no credit is traded.
+        </li>
+      </ul>
+      <p>
+        Every program asks for the same thing: <strong>measured, time-stamped energy data that an
+        auditor can trace to a specific device</strong>. A gateway that already reads the meters and
+        chargers, and identifies itself with its own device certificate, can supply that data. That can
+        turn a monitoring project into a recurring revenue stream. Eligibility and credit value depend
+        on the program, the region, and who owns the equipment, so each project should confirm them
+        with the program administrator or an aggregator.
+      </p>
+
+      <hr />
+
+      <h2>Three Principles I'm Building In from Day One</h2>
+      <ul>
+        <li>
+          <strong>Put each control function where its response time belongs.</strong> Grid protection,
+          anti-islanding, battery protection, and fire shutdown run in milliseconds inside certified
+          equipment. A round trip to the cloud, especially over cellular, takes hundreds of milliseconds
+          to seconds. That's fine for dispatch, arbitrage, and peak shaving, and far too slow for grid
+          protection. The gateway monitors the safety systems and never replaces them, which is also
+          what lets it be added without re-certifying the site's protection scheme.
+        </li>
+        <li>
+          <strong>The gateway is not a revenue meter.</strong> Credit programs need a meter approved by
+          the local metrology authority. The gateway collects cumulative kWh totals from it, not
+          instantaneous power, so the numbers survive a missed reading. Verification and registration
+          stay with the program operator or aggregator.
+        </li>
+        <li>
+          <strong>Be honest about the interfaces.</strong> Modbus, BACnet, and OCPP are the easy part.
+          Some batteries expose data only over vendor-specific CAN protocols, and utilities may require
+          their own interfaces such as DNP3 or IEEE 2030.5. Those need scoping early, per project.
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2>Final Thoughts</h2>
+      <p>
+        Managing a solar farm well starts with plumbing, not dashboards. Get the inverter, weather,
+        battery, cooling, fire, and charger data onto one secure timeline, keep fast control and
+        protection in the certified equipment on site, and let the gateway carry the supervisory
+        decisions and the energy data that pays for the project.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="../index.html">Home</a> |
+      <a href="../projects.html">Projects</a> |
+      <a href="../blog.html">Blog</a> |
+      <a href="../marketing.html">Marketing</a> |
+      <a href="../privacy-policy.html">Privacy Policy</a>
+    </div>
+    <p>© 2026 June Hong — Built with plain HTML & CSS</p>
+  </footer>
+
+</body>
+</html>

@@ -1,12 +1,12 @@
-# LinkedIn Post Draft — IIoT Edge Devices: AI-Production Optimization
+# LinkedIn Post Draft — IIoT Edge AI Devices: Production Optimization
 
-Companion article: [IIoT Edge Devices: AI-Production Optimization on the SMT Line](https://junehong-dominicus.github.io/posts/2026-09-26-iiot-edge-devices-ai-production-optimization.html)
+Companion article: [IIoT Edge AI Devices: Production Optimization on the SMT Line](https://junehong-dominicus.github.io/posts/2026-09-26-iiot-edge-devices-ai-production-optimization.html)
 
 Image: `images_for_blog/iiot-edge-devices-ai-production-optimization-linkedin.png` (1200×1200)
 
 ---
 
-**IIoT Edge Devices — AI-Production Optimization**
+**IIoT Edge AI Devices — Production Optimization**
 
 Walk down a surface-mount technology (SMT) line and count the controllers: printer, solder paste inspection (SPI), pick-and-place, reflow oven, automated optical inspection (AOI), conveyors. Each one comes from a different vendor and exposes its data a different way. The room's temperature and humidity sit in yet another system, the building management system (BMS).
 
