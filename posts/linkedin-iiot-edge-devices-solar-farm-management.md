@@ -10,15 +10,15 @@ A solar-plus-storage site has more vendors than people on site. You'll find phot
 
 The energy management system (EMS) needs all of it, on one timeline, plus a safe way to send set-points back.
 
-That's the job of an edge gateway:
+That's the job of an edge gateway, the edge device that sits between the field equipment and the cloud or on-premise dashboard:
 
 → Read inverters over Modbus TCP/RTU (SunSpec maps): string current, AC power, fault codes  
 → Pick up pyranometers and module-temperature sensors on RS-485, or 4–20 mA sensors through a remote I/O module  
 → Read battery state of charge (SoC), state of health (SoH), rack temperatures and cell imbalance from the BMS and PCS  
 → Monitor and adjust enclosure HVAC over BACnet/IP or MS/TP  
 → Act as a local Open Charge Point Protocol (OCPP 1.6J) endpoint so charger load shows up next to solar output and battery SoC  
-→ Give an on-site EMS that has no cloud link a remote dashboard, alerts and history, by polling it as a Modbus TCP server. No EMS rewrite needed.  
-→ Send it all over mutual-TLS, on its own cellular link so monitoring never touches the owner's network  
+→ Give an on-site EMS that has no remote access a dashboard, alerts and history, by polling it as a Modbus TCP server. No EMS rewrite needed.  
+→ Send it all over mutual-TLS to a cloud or on-premise dashboard, over site Ethernet or Wi-Fi, or over its own cellular link when the owner wants monitoring kept off their network  
 
 Once the data is in one place, management gets concrete:
 
@@ -30,7 +30,7 @@ Once the data is in one place, management gets concrete:
 
 Three principles I'm building in from day one:
 
-1. Put each control function where its response time belongs. Anti-islanding, battery protection and fire shutdown run in milliseconds inside certified equipment. A cellular round trip takes hundreds of milliseconds to seconds, which is fine for dispatch, arbitrage and peak shaving and far too slow for grid protection. The gateway monitors the safety systems and never replaces them.
+1. Put each control function where its response time belongs. Anti-islanding, battery protection and fire shutdown run in milliseconds inside certified equipment. A round trip to the cloud, especially over cellular, takes hundreds of milliseconds to seconds, which is fine for dispatch, arbitrage and peak shaving and far too slow for grid protection. The gateway monitors the safety systems and never replaces them.
 2. The gateway is not a revenue meter. Credit programs need an approved meter. The gateway's job is to collect cumulative kWh totals from it so the numbers survive a missed reading.
 3. Be honest about the interfaces. Modbus, BACnet and OCPP are the easy part. Vendor CAN protocols on some batteries, and utility interfaces like DNP3 or IEEE 2030.5, have to be scoped early, per project.
 
