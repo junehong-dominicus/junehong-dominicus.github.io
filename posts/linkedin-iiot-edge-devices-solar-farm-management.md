@@ -12,21 +12,21 @@ The EMS needs all of it, on one timeline, plus a safe way to send set-points bac
 
 That's the job of an edge gateway:
 
-→ Read inverters over Modbus TCP/RTU (SunSpec maps): string current, AC power, fault codes
-→ Pick up pyranometers and module-temperature sensors on RS-485, or 4–20 mA sensors through a remote I/O module
-→ Read battery SoC, SoH, rack temperatures and cell imbalance from the BMS and PCS
-→ Monitor and adjust enclosure HVAC over BACnet/IP or MS/TP
-→ Act as a local OCPP 1.6J endpoint so charger load shows up next to solar output and battery SoC
-→ Give an on-site EMS that has no cloud link a remote dashboard, alerts and history, by polling it as a Modbus TCP server. No EMS rewrite needed.
-→ Send it all over mutual-TLS, on its own cellular link so monitoring never touches the owner's network
+→ Read inverters over Modbus TCP/RTU (SunSpec maps): string current, AC power, fault codes  
+→ Pick up pyranometers and module-temperature sensors on RS-485, or 4–20 mA sensors through a remote I/O module  
+→ Read battery SoC, SoH, rack temperatures and cell imbalance from the BMS and PCS  
+→ Monitor and adjust enclosure HVAC over BACnet/IP or MS/TP  
+→ Act as a local OCPP 1.6J endpoint so charger load shows up next to solar output and battery SoC  
+→ Give an on-site EMS that has no cloud link a remote dashboard, alerts and history, by polling it as a Modbus TCP server. No EMS rewrite needed.  
+→ Send it all over mutual-TLS, on its own cellular link so monitoring never touches the owner's network  
 
 Once the data is in one place, management gets concrete:
 
-• Output falls below what irradiance and temperature predict → check for soiling, string faults, or clipping
-• Cell imbalance grows on one rack → schedule an inspection before it becomes a derate
-• A high-power discharge is scheduled → pre-cool the enclosure instead of running HVAC hard afterward
-• The fire panel goes into alarm → off-site staff are notified in seconds, with site context
-• kWh delivered per charger and metered solar generation → time-stamped, device-attributable data for low-carbon fuel credits and RECs
+• Output falls below what irradiance and temperature predict → check for soiling, string faults, or clipping  
+• Cell imbalance grows on one rack → schedule an inspection before it becomes a derate  
+• A high-power discharge is scheduled → pre-cool the enclosure instead of running HVAC hard afterward  
+• The fire panel goes into alarm → off-site staff are notified in seconds, with site context  
+• kWh delivered per charger and metered solar generation → time-stamped, device-attributable data for low-carbon fuel credits and RECs  
 
 Three things I've learned from these projects:
 
