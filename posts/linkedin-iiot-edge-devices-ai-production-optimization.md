@@ -6,24 +6,24 @@ Image: `images_for_blog/iiot-edge-devices-ai-production-optimization-linkedin.pn
 
 **IIoT Edge Devices — AI-Production Optimization**
 
-Walk down an SMT line and count the controllers: printer, SPI, pick-and-place, reflow oven, AOI, conveyors. Each one comes from a different vendor and exposes its data a different way. The room's temperature and humidity sit in yet another system, the BMS.
+Walk down a surface-mount technology (SMT) line and count the controllers: printer, solder paste inspection (SPI), pick-and-place, reflow oven, automated optical inspection (AOI), conveyors. Each one comes from a different vendor and exposes its data a different way. The room's temperature and humidity sit in yet another system, the building management system (BMS).
 
 Every machine has data. Maintenance still can't see the whole line in one place.
 
 That's the problem an edge gateway should solve before anyone says "AI":
 
-→ Read the line PLC over Modbus TCP or EtherNet/IP: board counts, transit times, jam faults
-→ Pick up sensors the PLC never had through a cheap RS-485 remote I/O module, without touching the PLC program
-→ Pull reflow zone temperatures straight from the oven controller
-→ Read humidity and temperature from the BMS over BACnet
-→ Send it all over mutual-TLS to a cloud or on-premise dashboard, over plant Ethernet or over its own cellular link when IT keeps OT devices off the corporate network
+→ Read the line PLC over Modbus TCP or EtherNet/IP: board counts, transit times, jam faults  
+→ Pick up sensors the PLC never had through a cheap RS-485 remote I/O module, without touching the PLC program  
+→ Pull reflow zone temperatures straight from the oven controller  
+→ Read humidity and temperature from the BMS over BACnet  
+→ Send it all over mutual-TLS to a cloud or on-premise dashboard, over plant Ethernet or over its own cellular link when IT keeps OT devices off the corporate network  
 
 Once the data sits on one timeline, optimization gets concrete:
 
-• Supply vacuum falls a little every day → check the pump and filters before pick errors start
-• Jam counts rise and transit times get longer → clean the sensors at the next planned stop
-• A reflow zone drifts from its set-point → warn before the profile goes out of spec
-• Humidity leaves its band → flag that production window for quality review
+• Supply vacuum falls a little every day → check the pump and filters before pick errors start  
+• Jam counts rise and transit times get longer → clean the sensors at the next planned stop  
+• A reflow zone drifts from its set-point → warn before the profile goes out of spec  
+• Humidity leaves its band → flag that production window for quality review  
 
 Most of these aren't neural networks yet. They're trends, and trends are what you should ship first. Learned anomaly detection on the device comes later, once the data shows where a hand-written rule stops working.
 

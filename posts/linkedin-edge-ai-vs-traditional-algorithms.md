@@ -18,11 +18,11 @@ But deciding you need a model is only half the job. The other half is making sur
 
 On anything that trips a suppression relay, the model doesn't get to be the sole authority — it's an advisor:
 
-→ A deterministic hard limit stays as the final veto, never the other way around
-→ Below a confidence threshold, it falls back to the rule instead of guessing
-→ It takes agreement across several inference windows, not one noisy frame
-→ Timeout or low confidence defaults to *safe*, not silent
-→ Every decision gets logged so a bad call can be reconstructed
+→ A deterministic hard limit stays as the final veto, never the other way around  
+→ Below a confidence threshold, it falls back to the rule instead of guessing  
+→ It takes agreement across several inference windows, not one noisy frame  
+→ Timeout or low confidence defaults to *safe*, not silent  
+→ Every decision gets logged so a bad call can be reconstructed  
 
 None of that makes the model explainable. It makes the system around it accountable — which is the actual bar in a safety review.
 
