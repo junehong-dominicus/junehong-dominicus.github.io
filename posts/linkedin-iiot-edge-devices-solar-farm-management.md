@@ -6,7 +6,7 @@ Image: `images_for_blog/iiot-edge-devices-solar-farm-management-linkedin.png` (1
 
 **IIoT Edge Devices — Solar Farm Management**
 
-A solar-plus-storage site has more vendors than people on site. You'll find photovoltaic (PV) inverters, a meteorological (met) station, trackers, a battery system with its own battery management system (BMS) and power conversion system (PCS), enclosure HVAC, a fire and gas panel, and now EV chargers too. Each one exposes its data differently, and most sites are unstaffed.
+A solar-plus-storage site has more vendors than people on site. You'll find photovoltaic (PV) inverters, a meteorological (met) station, trackers, a battery system with its own management and power conversion equipment, enclosure HVAC, a fire and gas panel, and now EV chargers too. Each one exposes its data differently, and most sites are unstaffed.
 
 The energy management system (EMS) needs all of it, on one timeline, plus a safe way to send set-points back.
 
@@ -14,7 +14,7 @@ That's the job of an edge gateway, the edge device that sits between the field e
 
 → Read inverters over Modbus TCP/RTU (SunSpec maps): string current, AC power, fault codes  
 → Pick up pyranometers and module-temperature sensors on RS-485, or 4–20 mA sensors through a remote I/O module  
-→ Read battery state of charge (SoC), state of health (SoH), rack temperatures and cell imbalance from the BMS and PCS  
+→ Read battery state of charge (SoC), state of health (SoH), rack temperatures and cell imbalance from the battery management system (BMS) and power conversion system (PCS)  
 → Monitor and adjust enclosure HVAC over BACnet/IP or MS/TP  
 → Act as a local Open Charge Point Protocol (OCPP 1.6J) endpoint so charger load shows up next to solar output and battery SoC  
 → Give an on-site EMS that has no remote access a dashboard, alerts and history, by polling it as a Modbus TCP server. No EMS rewrite needed.  
