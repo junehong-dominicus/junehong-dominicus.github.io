@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>SmartShopper Privacy Policy - June Hong</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #202a36; background: #fff; }
+    body { max-width: 48rem; margin: auto; padding: 24px; line-height: 1.7; overflow-wrap: anywhere; }
+    h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); line-height: 1.2; margin-bottom: 16px; }
+    h2 { font-size: 1.25rem; line-height: 1.4; margin-top: 32px; }
+    a { color: #075a9c; text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #075a9c; outline-offset: 4px; }
+    .notice { background: #f3f5f7; border-left: 4px solid #526579; padding: 16px; }
+    .meta, footer { color: #485565; }
+    footer { border-top: 1px solid #dce2e7; margin-top: 32px; padding-top: 16px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>SmartShopper Privacy Policy</h1>
+  <p class="meta">Developer: June Hong<br>Android app: <code>com.smartshopper777</code><br>Draft reviewed: October 20, 2026</p>
+  <aside class="notice" aria-label="Draft status"><strong>Review draft - not an effective policy.</strong> This page is based on current app source. The released versionCode 4 binary has not been verified. Contact details, backup behavior and final wording must be approved before publication. No effective date has been set.</aside>
+  <p>This policy describes how SmartShopper for Android handles shopping information, camera access and information processed by its third-party services.</p>
+
+  <h2>Shopping lists and membership cards</h2>
+  <p>SmartShopper stores shopping-list names, items, quantities, notes, categories and purchase status in a local database on your device. It also stores membership-card names, barcode values, barcode formats and notes. The reviewed app source does not include a developer-operated account or cloud-sync service. Third-party SDK processing and Android backup are separate from this local storage.</p>
+
+  <h2>Camera and barcode scanning</h2>
+  <p>The app requests camera permission when you choose to scan a membership-card barcode. The reviewed implementation processes camera frames using Google ML Kit on the device and saves the selected barcode value and format, rather than a camera photo, to the local card record. You can also enter a barcode manually without scanning. ML Kit collects diagnostic and usage information as described below.</p>
+
+  <h2>Advertising</h2>
+  <p>SmartShopper displays banner ads using Google Mobile Ads. Google's SDK disclosure lists automatic collection and sharing of IP addresses, app interactions, diagnostic information, and device or account identifiers for advertising, analytics and fraud prevention. IP addresses may be used to estimate general location. The specific information processed depends on SDK version, settings, available identifiers and consent choices. Limited ads do not mean that no data is processed.</p>
+  <p>See <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">Google Mobile Ads data disclosure</a> for the provider's description. This draft does not certify the exact SDK configuration in the currently released app.</p>
+
+  <h2>ML Kit diagnostics and usage information</h2>
+  <p>Google ML Kit's disclosure lists device information (such as model and operating system), app package and version, per-installation identifiers, performance metrics, API configuration, feature input/output sizes, feature versions, event types and error codes for diagnostics and usage analytics. This SDK information is distinct from the barcode value stored in your membership-card record.</p>
+  <p>See <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit's Android data disclosure</a> for details and any feature-specific processing.</p>
+
+  <h2>Privacy choices and permissions</h2>
+  <p>SmartShopper uses Google's User Messaging Platform to request updated consent information and display a consent form where required. In the planned app update, a Privacy menu on the home screen links to this policy and shows Privacy options when Google reports that an entry point is required. That update is not yet confirmed in the released app.</p>
+  <p>You can manage camera permission and advertising-ID controls through Android settings. Available controls and names vary by Android version. Changing a permission or consent choice does not itself delete information already processed by third-party services.</p>
+
+  <h2>Storage, backup and deletion</h2>
+  <p>You can delete shopping lists and membership cards in the app. Clearing app storage or uninstalling removes local app data, subject to Android backup and restore behavior. The reviewed manifest enables Android backup and uses default/example backup rules. Depending on your device and settings, app data may be backed up or transferred and later restored. This policy does not promise that data never leaves your device.</p>
+  <p>Information processed by Google services follows the provider's retention and deletion practices. This draft does not promise a particular retention period or immediate deletion of third-party records. Backup, restore and available deletion routes must be checked before this draft becomes effective.</p>
+
+  <h2>Intended audience</h2>
+  <p>SmartShopper is designed for adults managing grocery shopping. It is not designed as a child-directed app.</p>
+
+  <h2>Changes and contact</h2>
+  <p>The effective policy will show its effective date and will be updated when the app's data practices change.</p>
+  <p>Proposed privacy contact: <a href="mailto:junehong.dominicus@gmail.com">junehong.dominicus@gmail.com</a>. <strong>June must confirm this address and how privacy requests will be handled before publication.</strong></p>
+</main>
+<footer>This page covers the Android app, not the separate <a href="privacy-policy.html">website privacy policy</a>.</footer>
+</body>
+</html>
