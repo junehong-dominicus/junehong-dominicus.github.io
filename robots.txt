@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://junehong-dominicus.github.io/sitemap.xml

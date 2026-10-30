@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SmartMembership: Building a Privacy-First Digital Loyalty Wallet on iOS – June Hong</title>
   <meta name="description" content="A technical deep dive into building a native iOS app for digitizing loyalty cards using SwiftUI, AVFoundation, and CoreImage, with a focus on local processing and robust barcode handling.">
+  <link rel="canonical" href="https://junehong-dominicus.github.io/projects/2026-01-10-SmartMembership.html">
+  <meta name="theme-color" content="#0a0e14">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="June Hong">
+  <meta property="og:title" content="SmartMembership: Building a Privacy-First Digital Loyalty Wallet on iOS – June Hong">
+  <meta property="og:description" content="A technical deep dive into building a native iOS app for digitizing loyalty cards using SwiftUI, AVFoundation, and CoreImage, with a focus on local processing and robust barcode handling.">
+  <meta property="og:url" content="https://junehong-dominicus.github.io/projects/2026-01-10-SmartMembership.html">
+  <meta property="og:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SmartMembership: Building a Privacy-First Digital Loyalty Wallet on iOS – June Hong">
+  <meta name="twitter:description" content="A technical deep dive into building a native iOS app for digitizing loyalty cards using SwiftUI, AVFoundation, and CoreImage, with a focus on local processing and robust barcode handling.">
+  <meta name="twitter:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
   <meta name="author" content="June Hong">
   <link rel="icon" type="image/png" href="../assets/images/JHD.png">
 
@@ -29,8 +41,8 @@
         <a href="../index.html">Home</a>
         <a href="../projects.html">Projects</a>
         <a href="../blog.html">Blog</a>
-        <a href="https://github.com/junehong-dominicus" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/junehong-dominicus" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   </nav>
@@ -60,8 +72,8 @@
 <p>We all have that one drawer (or wallet) overflowing with loyalty cards, gym passes, and library cards. While there are many apps to digitize these, many come with bloat: account requirements, cloud syncing, and data tracking.</p>
 <p><strong>SmartMembership</strong> is a lightweight, open-source iOS application designed to solve this simply and privately. It allows users to scan, store, and regenerate their membership cards entirely on-device.</p>
 <div style="text-align: center; margin: 1.5rem 0;">
-  <a href="https://apps.apple.com/ca/app/smartmembership777/id6758261270" target="_blank" style="display: inline-block;">
-    <img src="../assets/images/SmartMembership_icon_small.png" alt="Download on the App Store">
+  <a href="https://apps.apple.com/ca/app/smartmembership777/id6758261270" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+    <img src="../assets/images/SmartMembership_icon_small.png" alt="Download on the App Store" loading="lazy" decoding="async">
   </a>
 </div>
 <p>In this post, I'll walk through the technical challenges of building a robust barcode scanner and renderer using native iOS frameworks.</p>
@@ -98,8 +110,8 @@ if type == .ean13 &amp;&amp; code.hasPrefix(&quot;0&quot;) &amp;&amp; code.count
 <h2>Conclusion</h2>
 <p>SmartMembership demonstrates that useful, everyday utilities can be built without compromising privacy or relying on heavy third-party SDKs. By leveraging <code>AVFoundation</code> and <code>CoreImage</code> intelligently, we created a seamless bridge between physical cards and digital wallets.</p>
 <div style="text-align: center; margin: 1.5rem 0;">
-  <a href="https://apps.apple.com/ca/app/smartmembership777/id6758261270" target="_blank" style="display: inline-block;">
-    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 50px; width: auto;">
+  <a href="https://apps.apple.com/ca/app/smartmembership777/id6758261270" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style="height: 50px; width: auto;" loading="lazy" decoding="async">
   </a>
 </div>    
     </article>

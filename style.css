@@ -19,7 +19,10 @@
 
   --text-main: #eef2f6;
   --text-muted: #93a1b0;
-  --text-dim: #5b6672;
+  /* Was #5b6672 — 3.3:1 on --bg-main, fails WCAG AA for the small
+     footer / meta / caption text that uses this colour. #8b9bab is
+     6.8:1 on --bg-main and 6.4:1 on --bg-panel. */
+  --text-dim: #8b9bab;
 
   --border: rgba(148, 197, 214, 0.16);
   --border-hover: rgba(34, 211, 238, 0.45);
@@ -696,9 +699,49 @@ footer p {
   color: var(--text-dim);
 }
 
+/* Visible keyboard focus — the dark theme swallows the default
+   outline on links and buttons. */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+::selection {
+  background: var(--primary-dim);
+  color: #ffffff;
+}
+
+/* Respect reduced-motion: no smooth scrolling or hover transitions */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
 /* Responsive Fixes */
 @media (max-width: 768px) {
   .hero { padding: 6rem 1.5rem 2rem; }
   .hero h1 { font-size: 3rem; }
-  .nav-links { display: none; } /* Could add hamburger menu if needed */
+  /* Navigation stays usable on mobile: brand on its own row, links
+     wrap underneath instead of disappearing (previously display:none,
+     which left mobile visitors with no nav at all). */
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.1rem;
+  }
+  /* Cards stack in one column instead of overflowing at 320-350px */
+  .expertise-grid, .project-grid, .feature-list {
+    grid-template-columns: 1fr;
+  }
 }
