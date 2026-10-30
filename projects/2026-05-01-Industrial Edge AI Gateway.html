@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Industrial Edge AI Gateway: Real-time Anomaly Detection on ESP32 – June Hong</title>
-  <meta name="description" content="A technical deep dive into architecting a high-performance Edge AI inference engine on ESP32 for industrial safety systems, featuring TFLite Micro, GRU models, and industrial-grade protocol integration.">
+  <title>Industrial Edge AI Gateway: Real-time Anomaly Detection at the Edge – June Hong</title>
+  <meta name="description" content="A technical deep dive into architecting a high-performance Edge AI inference engine on a microcontroller for industrial safety systems, featuring TFLite Micro, GRU models, and industrial-grade protocol integration.">
   <link rel="canonical" href="https://junehong-dominicus.github.io/projects/2026-05-01-Industrial%20Edge%20AI%20Gateway.html">
   <meta name="theme-color" content="#0a0e14">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="June Hong">
-  <meta property="og:title" content="Industrial Edge AI Gateway: Real-time Anomaly Detection on ESP32 – June Hong">
-  <meta property="og:description" content="A technical deep dive into architecting a high-performance Edge AI inference engine on ESP32 for industrial safety systems, featuring TFLite Micro, GRU models, and industrial-grade protocol integration.">
+  <meta property="og:title" content="Industrial Edge AI Gateway: Real-time Anomaly Detection at the Edge – June Hong">
+  <meta property="og:description" content="A technical deep dive into architecting a high-performance Edge AI inference engine on a microcontroller for industrial safety systems, featuring TFLite Micro, GRU models, and industrial-grade protocol integration.">
   <meta property="og:url" content="https://junehong-dominicus.github.io/projects/2026-05-01-Industrial%20Edge%20AI%20Gateway.html">
   <meta property="og:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Industrial Edge AI Gateway: Real-time Anomaly Detection on ESP32 – June Hong">
-  <meta name="twitter:description" content="A technical deep dive into architecting a high-performance Edge AI inference engine on ESP32 for industrial safety systems, featuring TFLite Micro, GRU models, and industrial-grade protocol integration.">
+  <meta name="twitter:title" content="Industrial Edge AI Gateway: Real-time Anomaly Detection at the Edge – June Hong">
+  <meta name="twitter:description" content="A technical deep dive into architecting a high-performance Edge AI inference engine on a microcontroller for industrial safety systems, featuring TFLite Micro, GRU models, and industrial-grade protocol integration.">
   <meta name="twitter:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
   <meta name="author" content="June Hong">
   <link rel="icon" type="image/png" href="../assets/images/JHD.png">
@@ -47,7 +47,7 @@
 
   <!-- Article Header -->
   <header class="article-header">
-    <h1>Industrial Edge AI Gateway: Real-time Anomaly Detection on ESP32</h1>
+    <h1>Industrial Edge AI Gateway: Real-time Anomaly Detection at the Edge</h1>
     <div class="article-meta">
       By June Hong • <time>2026-05-01</time>
     </div>
@@ -56,7 +56,7 @@
   <main>
     <article>
       <h2>Project Overview</h2>
-      <p>The <strong>Industrial Edge AI Gateway</strong> is a high-performance cyber-physical system designed to bring predictive maintenance and safety diagnostics to the extreme edge. By integrating Gated Recurrent Unit (GRU) models directly onto the ESP32-WROVER-E microcontroller, the system can detect anomalies in industrial sensors (smoke, CO, temperature, voltage) with sub-100ms latency, independent of cloud connectivity.</p>
+      <p>The <strong>Industrial Edge AI Gateway</strong> is a high-performance cyber-physical system designed to bring predictive maintenance and safety diagnostics to the extreme edge. By integrating Gated Recurrent Unit (GRU) models directly onto a dual-core microcontroller, the system can detect anomalies in industrial sensors (smoke, CO, temperature, voltage) with sub-100ms latency, independent of cloud connectivity.</p>
 
       <img src="../assets/images/Industrial_Edge_AI_Gateway.png" alt="Industrial Edge AI Gateway Concept" loading="lazy" decoding="async">
 
@@ -70,7 +70,7 @@
       </ul>
 
       <h3>2. Memory Optimization in PSRAM</h3>
-      <p>Running deep learning models on a 4MB PSRAM module requires surgical memory management. I implemented a custom allocation strategy for the <strong>TFLite Tensor Arena</strong> and model weights, utilizing <code>MALLOC_CAP_SPIRAM</code> to keep the internal SRAM free for fast stack operations.</p>
+      <p>Running deep learning models on a 4MB PSRAM module requires surgical memory management. I implemented a custom allocation strategy for the <strong>TFLite Tensor Arena</strong> and model weights, utilizing PSRAM-backed allocation to keep the internal SRAM free for fast stack operations.</p>
 
       <h3>3. The EHIF (Extensible Hardware Interface) Protocol</h3>
       <p>To enable seamless OTA model updates and telemetry reporting, I extended the EHIF protocol with a new command set (<code>0x50-0x5F</code>). This allows the gateway to receive quantized model chunks and reload the inference engine without a full system reboot.</p>
@@ -88,7 +88,7 @@
         <tbody>
           <tr>
             <td><strong>Microcontroller</strong></td>
-            <td>ESP32-WROVER-E (Dual-core, 240MHz)</td>
+            <td>Dual-core microcontroller (240 MHz)</td>
           </tr>
           <tr>
             <td><strong>AI Framework</strong></td>
@@ -129,7 +129,7 @@
       <hr />
 
       <h2>Future Work: LLM Integration</h2>
-      <p>The next phase of this project involves using the Edge AI anomalies as <strong>Cognitive Triggers</strong> for a cloud-resident Digital Twin agent. When the ESP32 detects an anomaly, it will trigger a LangGraph-based RAG workflow to provide the human operator with grounded diagnostic recommendations based on the equipment's technical manuals.</p>
+      <p>The next phase of this project involves using the Edge AI anomalies as <strong>Cognitive Triggers</strong> for a cloud-resident Digital Twin agent. When the gateway detects an anomaly, it will trigger a LangGraph-based RAG workflow to provide the human operator with grounded diagnostic recommendations based on the equipment's technical manuals.</p>
 
       <p>
         <a href="../projects.html">&larr; Back to Projects</a>

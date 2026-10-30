@@ -33,7 +33,7 @@ An enterprise-grade Digital Twin consists of five distinct operational layers:
 ┌────────────────────────────────────┴────────────────────────────────────┐
 │                     1. Physical Field & Control Layer                   │
 │   PLC / SCADA Systems │ Smart Sensors (Vibration, Temp, Pressure)       │
-│   Actuators / Robotics │ Embedded Controllers (STM32, ESP32, FPGA)       │
+│   Actuators / Robotics │ Embedded Controllers (Microcontrollers, FPGA)       │
 └─────────────────────────────────────────────────────────────────────────┘
 
 ```
