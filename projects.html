@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects – June Hong</title>
-  <meta name="description" content="Featured projects by June Hong: a Physical AI gateway on ESP32, LangGraph and RAG content pipelines, SmartMembership and SmartShopper.">
+  <meta name="description" content="Projects by June Hong, led by Physical AI and Edge AI: the Industrial Edge AI Gateway on ESP32 and the LLM-Powered Digital Twin, plus applied LLM systems and consumer apps.">
   <link rel="canonical" href="https://junehong-dominicus.github.io/projects.html">
   <meta name="theme-color" content="#0a0e14">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="June Hong">
   <meta property="og:title" content="Projects – June Hong">
-  <meta property="og:description" content="Featured projects by June Hong: a Physical AI gateway on ESP32, LangGraph and RAG content pipelines, SmartMembership and SmartShopper.">
+  <meta property="og:description" content="Projects by June Hong, led by Physical AI and Edge AI: the Industrial Edge AI Gateway on ESP32 and the LLM-Powered Digital Twin, plus applied LLM systems and consumer apps.">
   <meta property="og:url" content="https://junehong-dominicus.github.io/projects.html">
   <meta property="og:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Projects – June Hong">
-  <meta name="twitter:description" content="Featured projects by June Hong: a Physical AI gateway on ESP32, LangGraph and RAG content pipelines, SmartMembership and SmartShopper.">
+  <meta name="twitter:description" content="Projects by June Hong, led by Physical AI and Edge AI: the Industrial Edge AI Gateway on ESP32 and the LLM-Powered Digital Twin, plus applied LLM systems and consumer apps.">
   <meta name="twitter:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
   <link rel="icon" type="image/png" href="assets/images/JHD.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,14 +60,15 @@
 
   <main>
 
-    <!-- Projects -->
-    <section>
-      <h2>Featured Work</h2>
+    <!-- This page is hand-grouped by pillar (restructure 2026-10-30).
+         The PROJECT_LIST markers were retired: scripts/build_project.py
+         regenerates a flat date-sorted list and would undo the grouping. -->
 
+    <section>
+      <h2 class="collection-heading">Physical AI &amp; Edge AI</h2>
       <div class="project-grid">
-        <!-- PROJECT_LIST_START -->
         <div class="project-card">
-          <img src="assets/images/Industrial_Edge_AI_Gateway.png" alt="Industrial Edge AI Gateway"/ loading="lazy" decoding="async">
+          <img src="assets/images/Industrial_Edge_AI_Gateway.png" alt="Industrial Edge AI Gateway"/>
           <div class="project-card-content">
             <h3>Physical AI Gateway: Real-time Anomaly Detection on ESP32</h3>
             <p>Deploying quantized TFLite models to the extreme edge using ESP32 and FreeRTOS. Detecting industrial safety anomalies with sub-100ms inference latency for fire suppression systems.</p>
@@ -76,7 +77,21 @@
         </div>
 
         <div class="project-card">
-          <img src="assets/images/Autonomous_Blog_Pipeline_small.png" alt="Autonomous Blog Pipeline with LangGraph and RAG"/ loading="lazy" decoding="async">
+          <img src="assets/images/LLM-Powered_Digital_Twin_small.png" alt="LLM-Powered Digital Twin architecture" loading="lazy" decoding="async"/>
+          <div class="project-card-content">
+            <h3>LLM-Powered Digital Twin for Physical AI</h3>
+            <p>An LLM-powered Digital Twin that combines real-time IoT data, system-level rules, and a LangChain-based reasoning agent to explain what is happening, why it is happening, and what should be done next.</p>
+            <a class="project-link" href="posts/building-an-llm-powered-digital-twin.html">View details →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="collection-heading">Applied LLM Systems</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="assets/images/Autonomous_Blog_Pipeline_small.png" alt="Autonomous Blog Pipeline with LangGraph and RAG" loading="lazy" decoding="async"/>
           <div class="project-card-content">
             <h3>Building an Autonomous Blog Pipeline with LangGraph and RAG</h3>
             <p>A deep dive into building an end-to-end automated content generation pipeline that researches, writes, and publishes high-quality technical blog posts using LangChain, RAG, and LangGraph.</p>
@@ -85,16 +100,22 @@
         </div>
 
         <div class="project-card">
-          <img src="assets/images/LangGraph_Youtube_Content_Pipeline_small.png" alt="Automated YouTube Content Pipeline with LangGraph"/ loading="lazy" decoding="async">
+          <img src="assets/images/LangGraph_Youtube_Content_Pipeline_small.png" alt="Automated YouTube Content Pipeline with LangGraph" loading="lazy" decoding="async"/>
           <div class="project-card-content">
             <h3>Building an Automated YouTube Content Pipeline with LangGraph</h3>
             <p>A deep dive into building an end-to-end automated content generation pipeline that plans, generates, produces, and uploads YouTube videos using LangGraph.</p>
             <a class="project-link" href="projects/2026-01-20-Automated YouTube Content Pipeline.html">View details →</a>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section>
+      <h2 class="collection-heading">Consumer Apps</h2>
+      <p>Consumer iOS apps — full overviews live on the <a href="marketing.html">Marketing</a> page.</p>
+      <div class="project-grid">
         <div class="project-card">
-          <img src="assets/images/SmartMembership_small.png" alt="SmartMembership loyalty wallet app"/ loading="lazy" decoding="async">
+          <img src="assets/images/SmartMembership_small.png" alt="SmartMembership loyalty wallet app" loading="lazy" decoding="async"/>
           <div class="project-card-content">
             <h3>SmartMembership: Building a Privacy-First Digital Loyalty Wallet on iOS</h3>
             <p>A technical deep dive into building a native iOS app for digitizing loyalty cards using SwiftUI, AVFoundation, and CoreImage, with a focus on local processing and robust barcode handling.</p>
@@ -103,14 +124,13 @@
         </div>
 
         <div class="project-card">
-          <img src="assets/images/SmartShopper_small.png" alt="SmartShopper grocery list app"/ loading="lazy" decoding="async">
+          <img src="assets/images/SmartShopper_small.png" alt="SmartShopper grocery list app" loading="lazy" decoding="async"/>
           <div class="project-card-content">
             <h3>SmartShopper: Revolutionizing the Grocery Run with Smart Categorization</h3>
             <p>Introducing SmartShopper, an intelligent shopping list app that organizes your groceries by aisle, featuring smart categorization, quick entry, and accessibility-first design.</p>
             <a class="project-link" href="projects/2026-09-10-SmartShopper.html">View details →</a>
           </div>
         </div>
-<!-- PROJECT_LIST_END -->
       </div>
     </section>
 

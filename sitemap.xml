@@ -2,11 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://junehong-dominicus.github.io/blog.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://junehong-dominicus.github.io/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://junehong-dominicus.github.io/edge-ai.html</loc>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://junehong-dominicus.github.io/marketing/Portfolio.html</loc>
@@ -82,7 +86,7 @@
   </url>
   <url>
     <loc>https://junehong-dominicus.github.io/projects.html</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-10-30</lastmod>
   </url>
   <url>
     <loc>https://junehong-dominicus.github.io/shopora-privacy.html</loc>

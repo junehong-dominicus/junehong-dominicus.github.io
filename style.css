@@ -259,6 +259,35 @@ nav {
   }
 }
 
+/* Proof strip — mono stat chips under the hero (restructure 2026-10-30) */
+.proof-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+}
+
+.proof-strip span {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  background: var(--primary-dim);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.9rem;
+}
+
+/* Collection headings on the grouped Projects / Blog index pages */
+.collection-heading {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.collection-heading:first-of-type {
+  margin-top: 0;
+}
+
 /* Buttons */
 .button-row {
   display: flex;

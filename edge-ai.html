@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edge AI – June Hong</title>
+  <meta name="description" content="Edge AI by June Hong: quantized TFLite models on ESP32/ARM, sub-100ms on-device inference, and the Industrial Edge AI Gateway — plus field notes from solar farms and SMT lines, and when traditional algorithms beat Edge AI models.">
+  <link rel="canonical" href="https://junehong-dominicus.github.io/edge-ai.html">
+  <meta name="theme-color" content="#0a0e14">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="June Hong">
+  <meta property="og:title" content="Edge AI – June Hong">
+  <meta property="og:description" content="Edge AI by June Hong: quantized TFLite models on ESP32/ARM, sub-100ms on-device inference, and the Industrial Edge AI Gateway — plus field notes from solar farms and SMT lines, and when traditional algorithms beat Edge AI models.">
+  <meta property="og:url" content="https://junehong-dominicus.github.io/edge-ai.html">
+  <meta property="og:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Edge AI – June Hong">
+  <meta name="twitter:description" content="Edge AI by June Hong: quantized TFLite models on ESP32/ARM, sub-100ms on-device inference, and the Industrial Edge AI Gateway — plus field notes from solar farms and SMT lines, and when traditional algorithms beat Edge AI models.">
+  <meta name="twitter:image" content="https://junehong-dominicus.github.io/assets/images/physical_ai_hero.png">
+  <link rel="icon" type="image/png" href="assets/images/JHD.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5789326916093083"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/JHD.png" alt="JH" class="monogram" />
+        <span>June Hong, Dominicus</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="supports.html">Support</a>
+        <a href="marketing.html">Marketing</a>
+        <a href="https://github.com/junehong-dominicus" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/junehong-dominicus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner project-hero">
+      <img src="assets/images/Industrial_Edge_AI_Gateway.png" alt="Industrial Edge AI Gateway" />
+      <div>
+        <h1>Edge AI</h1>
+        <p>Intelligence that runs where the data is born. Quantized models on MCU-class hardware, deciding in milliseconds — no cloud round-trip, no dependency on a network that might not be there.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Case study -->
+    <section>
+      <h2>Case Study: Industrial Edge AI Gateway</h2>
+      <p>
+        A deep dive into deploying GRU-based inference engines to the extreme edge: sub-100ms anomaly
+        detection using TFLite Micro and FreeRTOS isolation on ESP32-WROVER hardware, for industrial
+        safety systems such as fire suppression.
+      </p>
+      <div class="proof-strip" aria-label="Edge AI proof points">
+        <span>sub-100ms inference latency</span>
+        <span>ESP32-WROVER &middot; TFLite Micro</span>
+        <span>FreeRTOS task isolation</span>
+        <span>OPC UA &rarr; MQTT normalization</span>
+      </div>
+      <p style="margin-top: 2rem;">
+        <a class="primary-button" href="projects/2026-05-01-Industrial Edge AI Gateway.html">Read the gateway project</a>
+      </p>
+    </section>
+
+    <!-- Field notes -->
+    <section>
+      <h2>Field Notes</h2>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <h3>IIoT Edge AI Devices: Solar Farm Management</h3>
+          <p>How edge gateways bring inverter, weather, battery, cooling, fire panel, and EV charger data from a solar-plus-storage site onto one secure timeline — plus where control belongs and how the same data supports carbon credits.</p>
+          <div class="blog-meta">
+            <span>2026-09-26</span>
+            <a class="read-more" href="posts/2026-09-26-iiot-edge-devices-solar-farm-management.html">Read more →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <h3>IIoT Edge AI Devices: Production Optimization on the SMT Line</h3>
+          <p>How edge gateways bring PLC, reflow oven, sensor, and building data from a surface-mount line onto one secure timeline — and why trend-based maintenance comes before AI.</p>
+          <div class="blog-meta">
+            <span>2026-09-26</span>
+            <a class="read-more" href="posts/2026-09-26-iiot-edge-devices-ai-production-optimization.html">Read more →</a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <h3>Traditional Algorithms vs. Edge AI Models: Choosing the Right Approach at the Edge</h3>
+          <p>A practical comparison of rule-based logic and quantized Edge AI models for embedded and IoT systems — pros, cons, and real examples of when each one wins.</p>
+          <div class="blog-meta">
+            <span>2026-09-20</span>
+            <a class="read-more" href="posts/2026-09-20-edge-ai-vs-traditional-algorithms.html">Read more →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Principles -->
+    <section>
+      <h2>Edge AI Principles</h2>
+      <ul class="feature-list">
+        <li><strong>Latency is a safety property:</strong> When a decision protects people or equipment, it cannot wait for a network. On-device inference keeps reaction time in milliseconds.</li>
+        <li><strong>Constraints first:</strong> Model size, memory, and power are design inputs from day one — quantization is an architecture decision, not a compression afterthought.</li>
+        <li><strong>Rules where rules win:</strong> Deterministic logic is auditable and predictable; Edge AI earns its place where patterns are too complex to hand-code.</li>
+        <li><strong>Store-and-forward resilience:</strong> Edge nodes cache locally and sync when the network returns — the physical system never stops because the cloud did.</li>
+      </ul>
+      <p>
+        Edge AI is one of the two pillars of my work — see how it meets Physical AI in
+        <a href="index.html#physical-ai">the Digital Twin stack</a>, or browse
+        <a href="projects.html">all projects</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a> | 
+      <a href="projects.html">Projects</a> | 
+      <a href="blog.html">Blog</a> | 
+      <a href="marketing.html">Marketing</a> |
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </div>
+    <p>© 2026 June Hong — Built with plain HTML & CSS</p>
+  </footer>
+
+</body>
+</html>
