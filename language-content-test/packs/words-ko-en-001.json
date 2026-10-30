@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "packVersion": 1,
-  "generatedAt": "2026-10-30T02:25:45Z",
+  "generatedAt": "2026-10-30T04:29:15Z",
   "items": [
     {
       "id": "w-ko-en-0001",
@@ -130,7 +130,6 @@
       "level": 1,
       "ko": "물고기",
       "en": "fish",
-      "note": "the animal",
       "image": "words/fish.png",
       "audio": null
     },
@@ -211,7 +210,6 @@
       "level": 1,
       "ko": "쥐",
       "en": "mouse",
-      "note": "the animal",
       "image": "words/mouse.png",
       "audio": null
     },
@@ -422,7 +420,6 @@
       "level": 1,
       "ko": "물개",
       "en": "seal",
-      "note": "the animal",
       "image": "words/seal.png",
       "audio": null
     },
@@ -483,7 +480,6 @@
       "level": 1,
       "ko": "박쥐",
       "en": "bat",
-      "note": "the flying animal",
       "image": "words/bat.png",
       "audio": null
     },
@@ -534,7 +530,6 @@
       "level": 1,
       "ko": "귤",
       "en": "tangerine",
-      "note": "small citrus fruit",
       "image": "words/tangerine.png",
       "audio": null
     },
@@ -645,7 +640,6 @@
       "level": 1,
       "ko": "키위",
       "en": "kiwi",
-      "note": "the fruit",
       "image": "words/kiwi.png",
       "audio": null
     },
@@ -796,7 +790,6 @@
       "level": 1,
       "ko": "밥",
       "en": "rice",
-      "note": "cooked rice, as served in a bowl",
       "image": "words/rice.png",
       "audio": null
     },
@@ -1057,7 +1050,6 @@
       "level": 1,
       "ko": "주황색",
       "en": "orange",
-      "note": "the colour",
       "image": "words/orange.png",
       "audio": null
     },
@@ -1128,7 +1120,6 @@
       "level": 1,
       "ko": "금색",
       "en": "gold",
-      "note": "the colour",
       "image": "words/gold.png",
       "audio": null
     },
@@ -1139,7 +1130,6 @@
       "level": 1,
       "ko": "은색",
       "en": "silver",
-      "note": "the colour",
       "image": "words/silver.png",
       "audio": null
     },
@@ -1170,7 +1160,6 @@
       "level": 1,
       "ko": "남색",
       "en": "navy",
-      "note": "dark blue",
       "image": "words/navy.png",
       "audio": null
     },
@@ -1191,7 +1180,6 @@
       "level": 1,
       "ko": "민트색",
       "en": "mint",
-      "note": "pale green-blue colour",
       "image": "words/mint.png",
       "audio": null
     },
@@ -1202,7 +1190,6 @@
       "level": 1,
       "ko": "연보라색",
       "en": "lavender",
-      "note": "pale purple",
       "image": "words/lavender.png",
       "audio": null
     },
@@ -1213,7 +1200,6 @@
       "level": 1,
       "ko": "산호색",
       "en": "coral",
-      "note": "pink-orange colour",
       "image": "words/coral.png",
       "audio": null
     },
@@ -1234,7 +1220,6 @@
       "level": 1,
       "ko": "청록색",
       "en": "turquoise",
-      "note": "blue-green colour",
       "image": "words/turquoise.png",
       "audio": null
     },
@@ -1265,7 +1250,6 @@
       "level": 1,
       "ko": "무지개색",
       "en": "rainbow",
-      "note": "all the colours together",
       "image": "words/rainbow.png",
       "audio": null
     },
@@ -1276,7 +1260,6 @@
       "level": 1,
       "ko": "안녕하세요",
       "en": "hello",
-      "note": "polite greeting",
       "image": "words/hello.png",
       "audio": null
     },
@@ -1287,7 +1270,6 @@
       "level": 1,
       "ko": "안녕",
       "en": "hi",
-      "note": "friendly greeting",
       "image": "words/hi.png",
       "audio": null
     },
@@ -1308,7 +1290,6 @@
       "level": 1,
       "ko": "안녕히 주무세요",
       "en": "good night",
-      "note": "said politely at bedtime",
       "image": "words/good-night.png",
       "audio": null
     },
@@ -1319,7 +1300,6 @@
       "level": 1,
       "ko": "잘 가",
       "en": "goodbye",
-      "note": "friendly, to someone leaving",
       "image": "words/goodbye.png",
       "audio": null
     },
@@ -1340,7 +1320,6 @@
       "level": 1,
       "ko": "감사합니다",
       "en": "thank you",
-      "note": "polite",
       "image": "words/thank-you.png",
       "audio": null
     },
@@ -1351,7 +1330,6 @@
       "level": 1,
       "ko": "고마워",
       "en": "thanks",
-      "note": "friendly",
       "image": "words/thanks.png",
       "audio": null
     },
@@ -1362,7 +1340,6 @@
       "level": 1,
       "ko": "천만에요",
       "en": "you're welcome",
-      "note": "reply to thank you",
       "image": "words/you-re-welcome.png",
       "audio": null
     },
@@ -1373,7 +1350,6 @@
       "level": 1,
       "ko": "주세요",
       "en": "please",
-      "note": "when asking for something",
       "image": "words/please.png",
       "audio": null
     },
@@ -1384,7 +1360,6 @@
       "level": 1,
       "ko": "실례합니다",
       "en": "excuse me",
-      "note": "to get attention politely",
       "image": "words/excuse-me.png",
       "audio": null
     },
@@ -1395,7 +1370,6 @@
       "level": 1,
       "ko": "미안해",
       "en": "sorry",
-      "note": "friendly",
       "image": "words/sorry.png",
       "audio": null
     },
@@ -1426,7 +1400,6 @@
       "level": 1,
       "ko": "좋아요",
       "en": "okay",
-      "note": "also means it is good",
       "image": "words/okay.png",
       "audio": null
     },
@@ -1457,7 +1430,6 @@
       "level": 1,
       "ko": "어서 오세요",
       "en": "welcome",
-      "note": "greeting someone who arrives",
       "image": "words/welcome.png",
       "audio": null
     },
@@ -1518,7 +1490,6 @@
       "level": 1,
       "ko": "화이팅",
       "en": "you can do it",
-      "note": "a cheer of encouragement",
       "image": "words/you-can-do-it.png",
       "audio": null
     },
@@ -1609,7 +1580,6 @@
       "level": 1,
       "ko": "이",
       "en": "tooth",
-      "note": "a child usually says 이",
       "image": "words/tooth.png",
       "audio": null
     },
@@ -1680,7 +1650,6 @@
       "level": 1,
       "ko": "손톱",
       "en": "nail",
-      "note": "fingernail",
       "image": "words/nail.png",
       "audio": null
     },
@@ -1731,7 +1700,6 @@
       "level": 1,
       "ko": "배",
       "en": "belly",
-      "note": "tummy",
       "image": "words/belly.png",
       "audio": null
     },
@@ -1742,7 +1710,6 @@
       "level": 1,
       "ko": "등",
       "en": "back",
-      "note": "the back of the body",
       "image": "words/back.png",
       "audio": null
     },
@@ -1843,7 +1810,6 @@
       "level": 1,
       "ko": "언니",
       "en": "older sister",
-      "note": "a boy says 누나 instead",
       "image": "words/older-sister.png",
       "audio": null
     },
@@ -1854,7 +1820,6 @@
       "level": 1,
       "ko": "오빠",
       "en": "older brother",
-      "note": "a boy says 형 instead",
       "image": "words/older-brother.png",
       "audio": null
     },
@@ -1865,7 +1830,6 @@
       "level": 1,
       "ko": "동생",
       "en": "younger sibling",
-      "note": "younger brother or sister",
       "image": "words/younger-sibling.png",
       "audio": null
     },
@@ -1876,7 +1840,6 @@
       "level": 1,
       "ko": "이모",
       "en": "aunt",
-      "note": "mother's sister",
       "image": "words/aunt.png",
       "audio": null
     },
@@ -1947,7 +1910,6 @@
       "level": 1,
       "ko": "경찰",
       "en": "police officer",
-      "note": "the person",
       "image": "words/police-officer.png",
       "audio": null
     },
@@ -1968,7 +1930,6 @@
       "level": 1,
       "ko": "요리사",
       "en": "cook",
-      "note": "the person",
       "image": "words/cook.png",
       "audio": null
     },

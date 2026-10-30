@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-30T02:25:45Z",
+  "generatedAt": "2026-10-30T04:29:15Z",
   "packs": [
     {
       "id": "words-ko-en-001",
       "path": "packs/words-ko-en-001.json",
       "packVersion": 1,
-      "sha256": "c4ddf9eceadcbc9364684d9eec4c385868562ed4845bd2149833a1327c674dc0",
+      "sha256": "288f721e1c3681a46534e536e188fd32ae183a805895ad5b2de84370ad1e70c3",
       "items": 200,
       "languages": [
         "ko",
