@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-30T04:29:15Z",
+  "generatedAt": "2026-11-17T17:56:04Z",
   "packs": [
     {
       "id": "words-ko-en-001",
@@ -8,6 +8,28 @@
       "packVersion": 1,
       "sha256": "288f721e1c3681a46534e536e188fd32ae183a805895ad5b2de84370ad1e70c3",
       "items": 200,
+      "languages": [
+        "ko",
+        "en"
+      ]
+    },
+    {
+      "id": "phrases-seoul-ko-001",
+      "path": "packs/phrases-seoul-ko-001.json",
+      "packVersion": 1,
+      "sha256": "a438c202ec3980ca01fa41795e6542be83b00d513495682279f931133f04c624",
+      "items": 26,
+      "languages": [
+        "ko",
+        "en"
+      ]
+    },
+    {
+      "id": "phrases-vancouver-en-001",
+      "path": "packs/phrases-vancouver-en-001.json",
+      "packVersion": 1,
+      "sha256": "ce6187e372c4c4538e6e9b632396265dc046bdf97ade8065a9f1e92470a7d45b",
+      "items": 22,
       "languages": [
         "ko",
         "en"
